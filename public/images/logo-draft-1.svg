@@ -1,0 +1,8 @@
+<svg viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Draft 1: Clean geometric wordmark — sharp angles on V, tight tracking -->
+  <text x="0" y="37" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-0.04em" fill="#1e1233">
+    <tspan fill="#6d28d9">V</tspan>eridex
+  </text>
+  <!-- Subtle underline accent -->
+  <rect x="0" y="43" width="48" height="2.5" rx="1.25" fill="#6d28d9"/>
+</svg>

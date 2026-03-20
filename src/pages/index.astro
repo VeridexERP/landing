@@ -1,17 +1,894 @@
 ---
 import Layout from "@/layouts/main.astro"
-import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import SiteHeader from "@/components/site-header"
+import SiteFooter from "@/components/site-footer.astro"
 ---
 
 <Layout>
-  <div class="flex min-h-svh p-6">
-    <div class="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-      <div>
-        <h1 class="font-medium">Project ready!</h1>
-        <p>You may now add components and start building.</p>
-        <p>We've already added the button component for you.</p>
-        <Button client:load className="mt-2">Button</Button>
+  <SiteHeader client:load isLanding />
+
+  <main>
+    <!-- Hero -->
+    <section class="mesh-gradient grid-pattern relative min-h-screen overflow-hidden pt-24">
+      <!-- Floating orbs -->
+      <div
+        class="animate-float pointer-events-none absolute top-32 left-[10%] h-72 w-72 rounded-full bg-primary/10 blur-3xl"
+      ></div>
+      <div
+        class="animate-float-slow pointer-events-none absolute right-[15%] bottom-32 h-96 w-96 rounded-full bg-[oklch(0.48_0.22_275_/_0.08)] blur-3xl"
+      ></div>
+      <div
+        class="animate-pulse-glow pointer-events-none absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl"
+      ></div>
+
+      <!-- Spinning ring decoration -->
+      <div
+        class="animate-spin-slow pointer-events-none absolute top-20 right-[5%] hidden h-96 w-96 opacity-[0.03] lg:block"
+      >
+        <div class="h-full w-full rounded-full border-2 border-dashed border-primary"></div>
       </div>
-    </div>
-  </div>
+
+      <div class="relative mx-auto flex max-w-7xl flex-col items-center justify-center px-6 py-32 text-center md:py-40">
+        <div class="animate-fade-in-up">
+          <Badge
+            variant="secondary"
+            className="mb-8 border border-primary/20 bg-primary/5 px-5 py-2 text-sm font-medium text-primary"
+          >
+            <span class="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-primary"></span>
+            Направено во Македонија, за Македонија
+          </Badge>
+        </div>
+
+        <h1
+          class="animate-fade-in-up delay-100 max-w-5xl text-5xl leading-[1.1] font-extrabold tracking-tight md:text-7xl lg:text-8xl"
+        >
+          Организација, транспорт и финансии —
+          <span class="text-gradient"> без хаос</span>
+        </h1>
+
+        <p
+          class="animate-fade-in-up delay-200 mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl"
+        >
+          Доста со расфрлани табели, изгубени фактури и рачно следење. Veridex ги
+          обединува сите процеси на едно место — на македонски.
+        </p>
+
+        <div
+          class="animate-fade-in-up delay-300 mt-12 flex flex-col items-center gap-4 sm:flex-row sm:gap-6"
+        >
+          <a href="#contact">
+            <button
+              class="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-[oklch(0.48_0.22_275)] px-10 py-4 text-lg font-semibold text-white shadow-2xl shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/40"
+            >
+              <span class="relative z-10">Закажи демо</span>
+              <div
+                class="animate-shimmer absolute inset-0 -z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+              ></div>
+            </button>
+          </a>
+          <a href="#modules">
+            <button
+              class="rounded-2xl border-2 border-primary/20 bg-white/50 px-10 py-4 text-lg font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-primary/40 hover:bg-white/80"
+            >
+              Погледни ги модулите
+            </button>
+          </a>
+        </div>
+
+        <!-- Stats bar -->
+        <div
+          class="animate-fade-in-up delay-500 glass mt-20 grid w-full max-w-3xl grid-cols-3 gap-px overflow-hidden rounded-2xl shadow-xl"
+        >
+          <div class="bg-white/80 px-6 py-6 text-center backdrop-blur-sm">
+            <div class="text-3xl font-bold text-primary md:text-4xl">3</div>
+            <div class="mt-1 text-sm text-muted-foreground">Модули</div>
+          </div>
+          <div class="bg-white/80 px-6 py-6 text-center backdrop-blur-sm">
+            <div class="text-3xl font-bold text-primary md:text-4xl">1</div>
+            <div class="mt-1 text-sm text-muted-foreground">Систем</div>
+          </div>
+          <div class="bg-white/80 px-6 py-6 text-center backdrop-blur-sm">
+            <div class="text-3xl font-bold text-primary md:text-4xl">0</div>
+            <div class="mt-1 text-sm text-muted-foreground">Excel табели</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom fade -->
+      <div
+        class="pointer-events-none absolute bottom-0 left-0 h-32 w-full bg-gradient-to-t from-background to-transparent"
+      ></div>
+    </section>
+
+    <!-- Modules -->
+    <section id="modules" class="relative overflow-hidden bg-muted/30 py-28 md:py-36">
+      <div class="grid-pattern pointer-events-none absolute inset-0 opacity-50"></div>
+      <div class="relative mx-auto max-w-7xl px-6">
+        <div class="mb-20 text-center" data-animate="fade-up">
+          <p class="mb-4 text-sm font-semibold tracking-widest text-primary uppercase">
+            Детали
+          </p>
+          <h2 class="text-4xl font-extrabold tracking-tight md:text-5xl">
+            Детален преглед на модулите
+          </h2>
+          <p class="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+            Секој модул решава конкретни проблеми — без функции што никогаш
+            нема да ги користите.
+          </p>
+        </div>
+
+        <!-- Module 1: Организација -->
+        <div class="mb-32 grid items-center gap-16 md:grid-cols-2">
+          <div data-animate="slide-left">
+            <div
+              class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary"
+            >
+              <span class="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">1</span>
+              Модул
+            </div>
+            <h3 class="mt-6 text-3xl font-extrabold md:text-4xl">
+              Целата организација на дланка
+            </h3>
+            <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Повеќе не треба да прашувате „кој го има тој документ?" или „на
+              која сметка е тоа?"
+            </p>
+            <ul class="mt-8 space-y-4">
+              {[
+                { title: "Компании", desc: "повеќе правни субјекти со банкарски сметки" },
+                { title: "Вработени", desc: "договори, плати и возачки казни" },
+                { title: "Возила и приколки", desc: "регистрација, документи и рокови" },
+                { title: "Одржување", desc: "сервисна историја со автоматски потсетници" },
+              ].map((item) => (
+                <li class="flex items-start gap-4">
+                  <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-3.5 w-3.5 text-primary"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                  </div>
+                  <span class="text-base">
+                    <strong class="font-semibold">{item.title}</strong>
+                    <span class="text-muted-foreground"> — {item.desc}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div data-animate="slide-right">
+            <div
+              class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/5 via-primary/10 to-[oklch(0.48_0.22_275_/_0.05)] p-1"
+            >
+              <div class="rounded-[calc(1.5rem-4px)] bg-white/80 p-12 backdrop-blur-sm">
+                <div class="grid grid-cols-2 gap-6">
+                  <div class="space-y-4 rounded-2xl bg-muted/50 p-5 transition-transform duration-300 hover:scale-105">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3H21" />
+                      </svg>
+                    </div>
+                    <p class="text-sm font-semibold">Компании</p>
+                    <div class="h-2 w-3/4 rounded-full bg-primary/20"></div>
+                    <div class="h-2 w-1/2 rounded-full bg-primary/10"></div>
+                  </div>
+                  <div class="space-y-4 rounded-2xl bg-muted/50 p-5 transition-transform duration-300 hover:scale-105">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                      </svg>
+                    </div>
+                    <p class="text-sm font-semibold">Вработени</p>
+                    <div class="h-2 w-full rounded-full bg-primary/20"></div>
+                    <div class="h-2 w-2/3 rounded-full bg-primary/10"></div>
+                  </div>
+                  <div class="space-y-4 rounded-2xl bg-muted/50 p-5 transition-transform duration-300 hover:scale-105">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+                      </svg>
+                    </div>
+                    <p class="text-sm font-semibold">Сметки</p>
+                    <div class="h-2 w-2/3 rounded-full bg-primary/20"></div>
+                    <div class="h-2 w-1/3 rounded-full bg-primary/10"></div>
+                  </div>
+                  <div class="space-y-4 rounded-2xl bg-muted/50 p-5 transition-transform duration-300 hover:scale-105">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                      </svg>
+                    </div>
+                    <p class="text-sm font-semibold">Документи</p>
+                    <div class="h-2 w-5/6 rounded-full bg-primary/20"></div>
+                    <div class="h-2 w-1/2 rounded-full bg-primary/10"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 2: Транспорт -->
+        <div class="mb-32 grid items-center gap-16 md:grid-cols-2">
+          <div class="order-2 md:order-1" data-animate="slide-left">
+            <div
+              class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-[oklch(0.48_0.22_275_/_0.05)] via-primary/10 to-primary/5 p-1"
+            >
+              <div class="rounded-[calc(1.5rem-4px)] bg-white/80 p-12 backdrop-blur-sm">
+                <!-- Stylized route visualization -->
+                <div class="relative">
+                  <div class="flex items-center justify-between">
+                    <div class="flex flex-col items-center gap-2">
+                      <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        </svg>
+                      </div>
+                      <span class="text-xs font-medium text-muted-foreground">Почеток</span>
+                    </div>
+                    <div class="mx-4 h-0.5 flex-1 bg-gradient-to-r from-primary/40 via-primary/20 to-primary/40"></div>
+                    <div class="flex flex-col items-center gap-2">
+                      <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/30">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                        </svg>
+                      </div>
+                      <span class="text-xs font-medium text-primary">Во тек</span>
+                    </div>
+                    <div class="mx-4 h-0.5 flex-1 bg-gradient-to-r from-primary/40 via-primary/20 to-muted"></div>
+                    <div class="flex flex-col items-center gap-2">
+                      <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-muted">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                      </div>
+                      <span class="text-xs font-medium text-muted-foreground">Крај</span>
+                    </div>
+                  </div>
+                  <div class="mt-8 space-y-3">
+                    <div class="flex items-center gap-3 rounded-xl bg-muted/50 p-3">
+                      <div class="h-3 w-3 rounded-full bg-green-500"></div>
+                      <span class="text-sm font-medium">SK-1234-AB</span>
+                      <span class="ml-auto text-xs text-muted-foreground">Скопје → Битола</span>
+                    </div>
+                    <div class="flex items-center gap-3 rounded-xl bg-muted/50 p-3">
+                      <div class="h-3 w-3 rounded-full bg-amber-500"></div>
+                      <span class="text-sm font-medium">SK-5678-CD</span>
+                      <span class="ml-auto text-xs text-muted-foreground">Сервис</span>
+                    </div>
+                    <div class="flex items-center gap-3 rounded-xl bg-muted/50 p-3">
+                      <div class="h-3 w-3 rounded-full bg-primary"></div>
+                      <span class="text-sm font-medium">SK-9012-EF</span>
+                      <span class="ml-auto text-xs text-muted-foreground">Охрид → Струга</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 md:order-2" data-animate="slide-right">
+            <div
+              class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary"
+            >
+              <span class="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">2</span>
+              Модул
+            </div>
+            <h3 class="mt-6 text-3xl font-extrabold md:text-4xl">
+              Транспортот под контрола
+            </h3>
+            <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Кој вози каде? Со кое возило? Колку нарачки? Поврзете ги сите
+              делови во една тура.
+            </p>
+            <ul class="mt-8 space-y-4">
+              {[
+                { title: "Тури", desc: "возило + приколка + возач + втор возач на едно место" },
+                { title: "Налози", desc: "нарачки по тура со поврзани трошоци и фактури" },
+                { title: "Трошоци по тура", desc: "секој расход евидентиран и поврзан" },
+                { title: "Документи", desc: "прилози и документација по тура и налог" },
+              ].map((item) => (
+                <li class="flex items-start gap-4">
+                  <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                  </div>
+                  <span class="text-base">
+                    <strong class="font-semibold">{item.title}</strong>
+                    <span class="text-muted-foreground"> — {item.desc}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Module 3: Финансии -->
+        <div class="grid items-center gap-16 md:grid-cols-2">
+          <div data-animate="slide-left">
+            <div
+              class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary"
+            >
+              <span class="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">3</span>
+              Модул
+            </div>
+            <h3 class="mt-6 text-3xl font-extrabold md:text-4xl">
+              Финансии без изненадувања
+            </h3>
+            <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Секоја фактура, секој трошок, секоја плата — со јасен статус и
+              целосна историја.
+            </p>
+            <ul class="mt-8 space-y-4">
+              {[
+                { title: "Трошоци", desc: "универзални, поврзани со возила, тури и вработени" },
+                { title: "Влезни фактури", desc: "со ставки, статуси и поврзаност со одржување" },
+                { title: "Излезни фактури", desc: "поврзани со налози за тури, следење на наплата" },
+              ].map((item) => (
+                <li class="flex items-start gap-4">
+                  <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                  </div>
+                  <span class="text-base">
+                    <strong class="font-semibold">{item.title}</strong>
+                    <span class="text-muted-foreground"> — {item.desc}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div data-animate="slide-right">
+            <div
+              class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/5 via-primary/10 to-[oklch(0.48_0.22_275_/_0.05)] p-1"
+            >
+              <div class="rounded-[calc(1.5rem-4px)] bg-white/80 p-12 backdrop-blur-sm">
+                <!-- Stylized financial dashboard -->
+                <div class="space-y-6">
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm font-semibold">Финансиски преглед</span>
+                    <span class="rounded-lg bg-green-100 px-2.5 py-1 text-xs font-medium text-green-700">+12.5%</span>
+                  </div>
+                  <div class="flex items-end gap-2">
+                    {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 88].map((h) => (
+                      <div class="flex-1 rounded-t-md bg-gradient-to-t from-primary/40 to-primary/20 transition-all duration-300 hover:from-primary/60 hover:to-primary/40" style={`height: ${h}px`}></div>
+                    ))}
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="rounded-xl bg-muted/50 p-4">
+                      <p class="text-xs text-muted-foreground">Влезни</p>
+                      <p class="mt-1 text-lg font-bold text-primary">ден. 2.4M</p>
+                    </div>
+                    <div class="rounded-xl bg-muted/50 p-4">
+                      <p class="text-xs text-muted-foreground">Излезни</p>
+                      <p class="mt-1 text-lg font-bold">ден. 1.8M</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Veridex -->
+    <section id="why" class="relative overflow-hidden py-28 md:py-36">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mb-20 text-center" data-animate="fade-up">
+          <p class="mb-4 text-sm font-semibold tracking-widest text-primary uppercase">
+            Предности
+          </p>
+          <h2 class="text-4xl font-extrabold tracking-tight md:text-5xl">
+            Зошто компании го избираат Veridex?
+          </h2>
+          <p class="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+            Затоа што е направен за тоа како работите вие, а не за тоа како
+            работат во Америка.
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.431.992a7.723 7.723 0 0 1 0 .255c-.007.378.138.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />`,
+              title: "Работите сами се движат",
+              desc: "Фактурите, нарачките и документите сами го менуваат статусот — вие само одобрувате.",
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />`,
+              title: "На вашиот јазик",
+              desc: "Целосно на македонски — не преведен, туку напишан на македонски од почеток.",
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />`,
+              title: "Секоја промена е запишана",
+              desc: "Кој, што и кога — целосна историја за секоја измена во системот.",
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />`,
+              title: "Брз и безбеден",
+              desc: "Модерна архитектура која не се крши под оптоварување и ги чува вашите податоци безбедно.",
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />`,
+              title: "Крај на хаосот со документи",
+              desc: "Сите договори, фактури и дозволи на едно место — пребарувајте, не барајте.",
+            },
+            {
+              icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />`,
+              title: "Одлуки базирани на податоци",
+              desc: "Извештаи за финансии, транспорт и организација кога ви требаат — не кога ќе стигнете да ги направите.",
+            },
+          ].map((item, i) => (
+            <div
+              class="group relative overflow-hidden rounded-2xl border border-border/50 bg-white p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5"
+              data-animate="scale-in"
+              style={`animation-delay: ${i * 100}ms`}
+            >
+              <div class="absolute top-0 right-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-primary/5 transition-transform duration-500 group-hover:scale-150"></div>
+              <div class="relative">
+                <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-7 w-7 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    set:html={item.icon}
+                  />
+                </div>
+                <h3 class="mb-3 text-xl font-bold">{item.title}</h3>
+                <p class="leading-relaxed text-muted-foreground">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="relative overflow-hidden bg-muted/30 py-28 md:py-36">
+      <div class="grid-pattern pointer-events-none absolute inset-0 opacity-50"></div>
+      <div class="relative mx-auto max-w-7xl px-6">
+        <div class="mb-20 text-center" data-animate="fade-up">
+          <p class="mb-4 text-sm font-semibold tracking-widest text-primary uppercase">
+            Цени
+          </p>
+          <h2 class="text-4xl font-extrabold tracking-tight md:text-5xl">
+            Едноставно и предвидливо
+          </h2>
+          <p class="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+            Без скриени трошоци, без пакети што не ви требаат. Една цена, сè
+            вклучено.
+          </p>
+        </div>
+
+        <div class="mx-auto max-w-lg" data-animate="scale-in">
+          <div
+            class="group relative overflow-hidden rounded-3xl border-2 border-primary/20 bg-white p-1 shadow-xl shadow-primary/5 transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10"
+          >
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[oklch(0.48_0.22_275_/_0.05)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div class="relative rounded-[calc(1.5rem-4px)] bg-white p-10 md:p-12">
+              <div class="mb-8 text-center">
+                <div
+                  class="mx-auto mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary"
+                >
+                  Сите модули вклучени
+                </div>
+                <div class="flex items-baseline justify-center gap-2">
+                  <span class="text-6xl font-extrabold tracking-tight md:text-7xl">50</span>
+                  <div class="text-left">
+                    <span class="text-2xl font-bold text-muted-foreground">EUR</span>
+                    <p class="text-sm text-muted-foreground">/ корисник / месец</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-10 space-y-4">
+                {[
+                  "Организација, транспорт и финансии",
+                  "Неограничен број компании",
+                  "Целосна историја на промени",
+                  "Автоматски работни текови",
+                  "Управување со документи",
+                  "Извештаи и аналитика",
+                  "Бесплатна поддршка и обука",
+                ].map((item) => (
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                      </svg>
+                    </div>
+                    <span class="text-base">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a href="#contact" class="block">
+                <button
+                  class="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-[oklch(0.48_0.22_275)] px-10 py-4 text-lg font-semibold text-white shadow-xl shadow-primary/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/30"
+                >
+                  <span class="relative z-10">Закажи демо</span>
+                  <div
+                    class="animate-shimmer absolute inset-0 -z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  ></div>
+                </button>
+              </a>
+
+              <p class="mt-4 text-center text-sm text-muted-foreground">
+                Без договор на период. Откажете кога сакате.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="relative overflow-hidden py-28 md:py-36">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[oklch(0.48_0.22_275_/_0.05)]"></div>
+      <div class="grid-pattern pointer-events-none absolute inset-0 opacity-30"></div>
+
+      <div class="relative mx-auto max-w-7xl px-6">
+        <div class="grid items-center gap-16 md:grid-cols-2">
+          <!-- Left: copy -->
+          <div data-animate="slide-left">
+            <div
+              class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+              </svg>
+              Започнете денес
+            </div>
+
+            <h2 class="mt-6 text-4xl font-extrabold tracking-tight md:text-5xl">
+              Доста е со
+              <span class="text-gradient"> рачна работа</span>
+            </h2>
+            <p class="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
+              Закажете бесплатна демонстрација и видете како Veridex може да ги
+              замени табелите, потсетниците и прашањата „каде е тоа?"
+            </p>
+
+            <div class="mt-10 space-y-5">
+              <div class="flex items-center gap-4">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm text-muted-foreground">Е-пошта</p>
+                  <a href="mailto:info@veridex.mk" class="font-medium transition-colors duration-200 hover:text-primary">info@veridex.mk</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm text-muted-foreground">Одговараме во рок од</p>
+                  <p class="font-medium">24 часа</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm text-muted-foreground">Демото е</p>
+                  <p class="font-medium">Бесплатно, без обврска</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <div data-animate="slide-right">
+            <div class="overflow-hidden rounded-3xl border border-border/50 bg-white p-8 shadow-xl shadow-primary/5 md:p-10">
+              <form id="contact-form" class="space-y-5">
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label for="name" class="mb-1.5 block text-sm font-medium">Име и презиме</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      class="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm transition-colors duration-200 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                      placeholder="Марко Маркоски"
+                    />
+                  </div>
+                  <div>
+                    <label for="company" class="mb-1.5 block text-sm font-medium">Компанија</label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      required
+                      class="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm transition-colors duration-200 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                      placeholder="Назив на компанија"
+                    />
+                  </div>
+                </div>
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label for="email" class="mb-1.5 block text-sm font-medium">Е-пошта</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm transition-colors duration-200 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                      placeholder="marko@kompanija.mk"
+                    />
+                  </div>
+                  <div>
+                    <label for="phone" class="mb-1.5 block text-sm font-medium">
+                      Телефон <span class="text-muted-foreground">(опционално)</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      class="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm transition-colors duration-200 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                      placeholder="+389 7X XXX XXX"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label for="message" class="mb-1.5 block text-sm font-medium">
+                    Порака <span class="text-muted-foreground">(опционално)</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    class="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm transition-colors duration-200 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                    placeholder="Кажете ни повеќе за вашиот бизнис или прашања..."
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  id="submit-btn"
+                  class="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-[oklch(0.48_0.22_275)] px-10 py-4 text-lg font-semibold text-white shadow-xl shadow-primary/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/30 disabled:pointer-events-none disabled:opacity-60"
+                >
+                  <span id="btn-text" class="relative z-10">Закажи бесплатно демо</span>
+                  <span id="btn-loading" class="relative z-10 hidden items-center justify-center gap-2">
+                    <svg class="h-5 w-5 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Се испраќа...
+                  </span>
+                  <div class="animate-shimmer absolute inset-0 -z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                </button>
+              </form>
+
+              <!-- Success state -->
+              <div id="form-success" class="hidden py-12 text-center">
+                <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold">Пораката е испратена!</h3>
+                <p class="mt-3 text-muted-foreground">
+                  Ќе ве контактираме во рок од 24 часа за да закажеме демо.
+                </p>
+              </div>
+
+              <!-- Error state -->
+              <div id="form-error" class="mt-4 hidden rounded-xl bg-red-50 p-4 text-sm text-red-700">
+                Настана грешка при испраќање. Обидете се повторно или пишете ни на
+                <a href="mailto:info@veridex.mk" class="font-medium underline">info@veridex.mk</a>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="relative overflow-hidden bg-muted/30 py-28 md:py-36">
+      <div class="grid-pattern pointer-events-none absolute inset-0 opacity-50"></div>
+      <div class="relative mx-auto max-w-3xl px-6">
+        <div class="mb-16 text-center" data-animate="fade-up">
+          <p class="mb-4 text-sm font-semibold tracking-widest text-primary uppercase">
+            FAQ
+          </p>
+          <h2 class="text-4xl font-extrabold tracking-tight md:text-5xl">
+            Чести прашања
+          </h2>
+        </div>
+
+        <div class="space-y-4" data-animate="fade-up">
+          <details class="group rounded-2xl border border-border/50 bg-white">
+            <summary class="flex cursor-pointer items-center justify-between px-8 py-6 text-lg font-semibold select-none">
+              Колку време трае имплементацијата?
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </summary>
+            <div class="px-8 pb-6 leading-relaxed text-muted-foreground">
+              Зависи од големината на компанијата и бројот на модули, но
+              типично сте оперативни за 1-2 недели. Вклучена е бесплатна обука
+              за целиот тим.
+            </div>
+          </details>
+
+          <details class="group rounded-2xl border border-border/50 bg-white">
+            <summary class="flex cursor-pointer items-center justify-between px-8 py-6 text-lg font-semibold select-none">
+              Може ли да ги импортирам постоечките податоци?
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </summary>
+            <div class="px-8 pb-6 leading-relaxed text-muted-foreground">
+              Да. Ви помагаме да ги префрлите податоците од Excel, друг софтвер
+              или хартиена евиденција. Миграцијата е вклучена во цената.
+            </div>
+          </details>
+
+          <details class="group rounded-2xl border border-border/50 bg-white">
+            <summary class="flex cursor-pointer items-center justify-between px-8 py-6 text-lg font-semibold select-none">
+              Што ако сакам да откажам?
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </summary>
+            <div class="px-8 pb-6 leading-relaxed text-muted-foreground">
+              Нема договор на период. Откажувате кога сакате, без казни или
+              скриени трошоци. Вашите податоци ви се враќаат во целост.
+            </div>
+          </details>
+
+          <details class="group rounded-2xl border border-border/50 bg-white">
+            <summary class="flex cursor-pointer items-center justify-between px-8 py-6 text-lg font-semibold select-none">
+              Дали податоците се безбедни?
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </summary>
+            <div class="px-8 pb-6 leading-relaxed text-muted-foreground">
+              Апсолутно. Сите податоци се енкриптирани, со редовни бекапи и
+              пристап контролиран по корисник. Секоја промена во системот е
+              логирана.
+            </div>
+          </details>
+
+          <details class="group rounded-2xl border border-border/50 bg-white">
+            <summary class="flex cursor-pointer items-center justify-between px-8 py-6 text-lg font-semibold select-none">
+              Дали можам да користам само еден модул?
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </summary>
+            <div class="px-8 pb-6 leading-relaxed text-muted-foreground">
+              Сите три модули се вклучени во цената, но не мора да ги користите
+              сите одеднаш. Почнете со она што ви е најпотребно и додавајте
+              кога ќе бидете подготвени.
+            </div>
+          </details>
+
+          <details class="group rounded-2xl border border-border/50 bg-white">
+            <summary class="flex cursor-pointer items-center justify-between px-8 py-6 text-lg font-semibold select-none">
+              Каква поддршка е вклучена?
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </summary>
+            <div class="px-8 pb-6 leading-relaxed text-muted-foreground">
+              Директна комуникација со тимот, без тикет систем. Обука за нови
+              корисници, помош при миграција и техничка поддршка по е-пошта и
+              телефон.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
 </Layout>
+
+<script>
+  // Scroll-triggered animations
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible")
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+  )
+
+  document.querySelectorAll("[data-animate]").forEach((el) => {
+    observer.observe(el)
+  })
+
+  // Contact form
+  const form = document.getElementById("contact-form") as HTMLFormElement | null
+  const btnText = document.getElementById("btn-text")
+  const btnLoading = document.getElementById("btn-loading")
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement | null
+  const formSuccess = document.getElementById("form-success")
+  const formError = document.getElementById("form-error")
+
+  if (form && btnText && btnLoading && submitBtn && formSuccess && formError) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault()
+      formError.classList.add("hidden")
+      submitBtn.disabled = true
+      btnText.classList.add("hidden")
+      btnLoading.classList.remove("hidden")
+      btnLoading.classList.add("flex")
+
+      const data = Object.fromEntries(new FormData(form))
+
+      try {
+        // Replace with your API endpoint when backend is ready
+        const endpoint = form.dataset.endpoint
+        if (endpoint) {
+          const res = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          })
+          if (!res.ok) throw new Error("Failed")
+        } else {
+          // Fallback: open mailto with form data
+          const subject = encodeURIComponent(`Демо барање — ${data.company}`)
+          const body = encodeURIComponent(
+            `Име: ${data.name}\nКомпанија: ${data.company}\nЕ-пошта: ${data.email}\nТелефон: ${data.phone || "/"}\n\nПорака:\n${data.message || "/"}`
+          )
+          window.open(`mailto:info@veridex.mk?subject=${subject}&body=${body}`)
+        }
+
+        form.classList.add("hidden")
+        formSuccess.classList.remove("hidden")
+      } catch {
+        formError.classList.remove("hidden")
+        submitBtn.disabled = false
+        btnText.classList.remove("hidden")
+        btnLoading.classList.add("hidden")
+        btnLoading.classList.remove("flex")
+      }
+    })
+  }
+
+  // Header scroll effect
+  const header = document.getElementById("site-header")
+  if (header) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("shadow-lg", "shadow-black/5")
+        header.classList.remove("border-white/10")
+        header.classList.add("border-border/50")
+      } else {
+        header.classList.remove("shadow-lg", "shadow-black/5")
+        header.classList.add("border-white/10")
+        header.classList.remove("border-border/50")
+      }
+    })
+  }
+</script>

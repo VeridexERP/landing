@@ -1,0 +1,76 @@
+<svg viewBox="0 0 800 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="280" rx="16" fill="#f8f9fa"/>
+
+  <!-- Step 1: Нова -->
+  <g transform="translate(40, 60)">
+    <rect width="130" height="130" rx="14" fill="#fff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <rect x="0" y="0" width="130" height="36" rx="14" fill="#6366f1" opacity="0.06"/>
+    <circle cx="22" cy="18" r="10" fill="#6366f1" opacity="0.15"/>
+    <text x="22" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#6366f1" text-anchor="middle">1</text>
+    <text x="42" y="22" font-family="sans-serif" font-size="11" font-weight="600" fill="#6366f1">Нова</text>
+    <rect x="16" y="50" width="100" height="6" rx="3" fill="#e5e7eb"/>
+    <rect x="16" y="64" width="70" height="6" rx="3" fill="#e5e7eb"/>
+    <rect x="16" y="84" width="60" height="16" rx="6" fill="#6366f1" opacity="0.08"/>
+    <text x="46" y="95" font-family="sans-serif" font-size="8" fill="#6366f1" font-weight="600" text-anchor="middle">Внесена</text>
+  </g>
+
+  <!-- Arrow 1→2 -->
+  <g transform="translate(180, 118)">
+    <line x1="0" y1="0" x2="36" y2="0" stroke="#d1d5db" stroke-width="2" stroke-dasharray="4 3"/>
+    <polyline points="30,-5 38,0 30,5" stroke="#d1d5db" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Step 2: Одобрување -->
+  <g transform="translate(225, 60)">
+    <rect width="130" height="130" rx="14" fill="#fff" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="0" y="0" width="130" height="36" rx="14" fill="#f59e0b" opacity="0.06"/>
+    <circle cx="22" cy="18" r="10" fill="#f59e0b" opacity="0.15"/>
+    <text x="22" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#f59e0b" text-anchor="middle">2</text>
+    <text x="42" y="22" font-family="sans-serif" font-size="11" font-weight="600" fill="#f59e0b">Одобрување</text>
+    <rect x="16" y="50" width="100" height="6" rx="3" fill="#e5e7eb"/>
+    <rect x="16" y="64" width="80" height="6" rx="3" fill="#e5e7eb"/>
+    <rect x="16" y="84" width="74" height="16" rx="6" fill="#f59e0b" opacity="0.08"/>
+    <text x="53" y="95" font-family="sans-serif" font-size="8" fill="#f59e0b" font-weight="600" text-anchor="middle">Чека одобр.</text>
+  </g>
+
+  <!-- Arrow 2→3 -->
+  <g transform="translate(365, 118)">
+    <line x1="0" y1="0" x2="36" y2="0" stroke="#d1d5db" stroke-width="2" stroke-dasharray="4 3"/>
+    <polyline points="30,-5 38,0 30,5" stroke="#d1d5db" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Step 3: Испратена -->
+  <g transform="translate(410, 60)">
+    <rect width="130" height="130" rx="14" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="0" y="0" width="130" height="36" rx="14" fill="#3b82f6" opacity="0.06"/>
+    <circle cx="22" cy="18" r="10" fill="#3b82f6" opacity="0.15"/>
+    <text x="22" y="22" font-family="sans-serif" font-size="11" font-weight="700" fill="#3b82f6" text-anchor="middle">3</text>
+    <text x="42" y="22" font-family="sans-serif" font-size="11" font-weight="600" fill="#3b82f6">Испратена</text>
+    <rect x="16" y="50" width="100" height="6" rx="3" fill="#e5e7eb"/>
+    <rect x="16" y="64" width="90" height="6" rx="3" fill="#e5e7eb"/>
+    <rect x="16" y="84" width="68" height="16" rx="6" fill="#3b82f6" opacity="0.08"/>
+    <text x="50" y="95" font-family="sans-serif" font-size="8" fill="#3b82f6" font-weight="600" text-anchor="middle">Испратена</text>
+  </g>
+
+  <!-- Arrow 3→4 -->
+  <g transform="translate(550, 118)">
+    <line x1="0" y1="0" x2="36" y2="0" stroke="#d1d5db" stroke-width="2" stroke-dasharray="4 3"/>
+    <polyline points="30,-5 38,0 30,5" stroke="#d1d5db" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Step 4: Платена -->
+  <g transform="translate(595, 60)">
+    <rect width="150" height="130" rx="14" fill="#fff" stroke="#22c55e" stroke-width="1.5"/>
+    <rect x="0" y="0" width="150" height="36" rx="14" fill="#22c55e" opacity="0.06"/>
+    <circle cx="22" cy="18" r="10" fill="#22c55e" opacity="0.15"/>
+    <path d="M17 18 L20 21 L27 14" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <text x="42" y="22" font-family="sans-serif" font-size="11" font-weight="600" fill="#22c55e">Платена</text>
+    <rect x="16" y="50" width="120" height="6" rx="3" fill="#e5e7eb"/>
+    <rect x="16" y="64" width="90" height="6" rx="3" fill="#e5e7eb"/>
+    <rect x="16" y="84" width="58" height="16" rx="6" fill="#22c55e" opacity="0.12"/>
+    <text x="45" y="95" font-family="sans-serif" font-size="8" fill="#22c55e" font-weight="600" text-anchor="middle">Завршена</text>
+  </g>
+
+  <!-- Bottom label -->
+  <text x="400" y="240" font-family="sans-serif" font-size="13" fill="#9ca3af" text-anchor="middle">Секоја фактура автоматски го менува статусот — вие само одобрувате</text>
+</svg>

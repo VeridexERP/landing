@@ -1,0 +1,8 @@
+<svg viewBox="0 0 220 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Draft 2: Two-tone split wordmark — "Veri" bold + "dex" light weight -->
+  <text x="0" y="36" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="34" letter-spacing="-0.03em">
+    <tspan font-weight="800" fill="#6d28d9">Veri</tspan><tspan font-weight="300" fill="#4c1d95">dex</tspan>
+  </text>
+  <!-- Dot accent -->
+  <circle cx="195" cy="33" r="4" fill="#7c3aed"/>
+</svg>

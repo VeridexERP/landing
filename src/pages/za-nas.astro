@@ -1,0 +1,218 @@
+---
+import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header"
+import SiteFooter from "@/components/site-footer.astro"
+---
+
+<Layout
+  title="За нас — Veridex ERP"
+  description="Мал тим со голема визија — го градиме ERP-от што македонските бизниси заслужуваат."
+>
+  <SiteHeader client:load currentPath="/za-nas" />
+
+  <main class="pt-24">
+    <!-- Hero -->
+    <section class="relative overflow-hidden py-16 md:py-24">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[oklch(0.48_0.22_275_/_0.05)]"></div>
+      <div class="grid-pattern pointer-events-none absolute inset-0 opacity-30"></div>
+
+      <div class="relative mx-auto max-w-7xl px-6">
+        <div class="mb-12">
+          <a
+            href="/"
+            class="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+            Назад кон почетна
+          </a>
+          <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
+            Мал тим,
+            <span class="text-gradient"> голема визија</span>
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            Го градиме софтверот што сакавме да го имаме кога работевме со
+            застарени системи — и не го најдовме.
+          </p>
+        </div>
+
+        <img
+          src="/images/about-illustration.svg"
+          alt="Од застарен софтвер до модерен систем"
+          class="w-full rounded-2xl border border-border/50"
+        />
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-6">
+        <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">
+          Зошто Veridex?
+        </h2>
+        <div class="mt-8 space-y-6 text-lg leading-relaxed text-muted-foreground">
+          <p>
+            Работевме со македонски компании — транспортни фирми, производствени
+            погони, трговски друштва. Секоја имаше ист проблем: софтверот што го
+            користеа беше или <strong class="text-foreground">застарен до степен на неупотребливост</strong>,
+            или беше странски систем преведен на македонски кој никогаш навистина
+            не се вклопуваше во начинот на работа.
+          </p>
+          <p>
+            ERP системите на пазарот се или огромни и комплицирани (SAP, Dynamics)
+            — наменети за корпорации со тимови за имплементација — или се
+            локални решенија од 2000-тите кои изгледаат и функционираат како да
+            се од тоа време.
+          </p>
+          <p>
+            <strong class="text-foreground">Празнината е очигледна:</strong> нема модерен, едноставен ERP
+            направен за македонски бизниси од средна големина. Систем кој е
+            напишан на македонски од почеток, не преведен. Систем кој го разбира
+            локалниот начин на работа. Систем кој не бара 6 месеци обука за да
+            почнете да го користите.
+          </p>
+          <p>
+            Затоа го направивме Veridex.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="bg-muted/30 py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">
+            Во што веруваме
+          </h2>
+          <p class="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
+            Не правила на хартија — принципи по кои работиме секој ден.
+          </p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-3">
+          <div class="rounded-2xl border border-border/50 bg-white p-8">
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-xl font-bold">Едноставност пред сè</h3>
+            <p class="leading-relaxed text-muted-foreground">
+              Секоја функција мора да биде разбирлива без упатство. Ако треба
+              да објаснуваме како нешто работи — значи не е доволно едноставно.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-border/50 bg-white p-8">
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-xl font-bold">Локално прво</h3>
+            <p class="leading-relaxed text-muted-foreground">
+              Не преведуваме странски систем. Градиме од нула за тоа како
+              работат бизнисите во Македонија — со нивните процеси, регулативи
+              и практики.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-border/50 bg-white p-8">
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-xl font-bold">Директна комуникација</h3>
+            <p class="leading-relaxed text-muted-foreground">
+              Нема тикет систем со 5 дена чекање. Кога имате проблем, зборувате
+              со луѓето што го правеле системот — не со скрипта од call центар.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The gap -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-6">
+        <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">
+          Празнината на пазарот
+        </h2>
+        <div class="mt-8 space-y-6 text-lg leading-relaxed text-muted-foreground">
+          <p>
+            Погледнете го софтверот што го користат повеќето македонски компании
+            за организација, транспорт или финансии. Ситуацијата е секогаш иста:
+          </p>
+        </div>
+
+        <div class="mt-10 space-y-4">
+          {[
+            {
+              label: "Застарени локални системи",
+              desc: "Софтвер од 2005, Windows XP интерфејс, база на податоци на еден компјутер. Кога тој компјутер падне \u2014 с\u0435\u0300 застанува.",
+            },
+            {
+              label: "Преведени странски решенија",
+              desc: "Системи направени за германски или американски пазар, преведени на македонски со Google Translate квалитет. Процесите не се вклопуваат.",
+            },
+            {
+              label: "Excel + меморија",
+              desc: "Најчестото \u201Eрешение\u201C \u2014 десетици табели, знаењето е во главата на еден човек, и с\u0435\u0300 работи додека тој човек не отиде на одмор.",
+            },
+          ].map((item) => (
+            <div class="rounded-2xl border border-border/50 bg-muted/30 p-6">
+              <h3 class="mb-2 font-bold text-foreground">{item.label}</h3>
+              <p class="leading-relaxed text-muted-foreground">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-10 space-y-6 text-lg leading-relaxed text-muted-foreground">
+          <p>
+            Veridex е одговорот на сето ова. Модерен систем, напишан од нула,
+            специјално за начинот на работа во Македонија. Без багаж од минатото,
+            без компромиси во корисничкото искуство.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-muted/30 py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-6 text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">
+          Подготвени да видите нешто
+          <span class="text-gradient"> поинакво?</span>
+        </h2>
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          Закажете бесплатна демонстрација и видете зошто компании преминуваат
+          на Veridex.
+        </p>
+        <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
+          <a href="/kontakt">
+            <button
+              class="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-[oklch(0.48_0.22_275)] px-10 py-4 text-lg font-semibold text-white shadow-2xl shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/40"
+            >
+              <span class="relative z-10">Закажи бесплатно демо</span>
+              <div
+                class="animate-shimmer absolute inset-0 -z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+              ></div>
+            </button>
+          </a>
+          <a
+            href="mailto:info@veridex.mk"
+            class="text-base font-medium text-muted-foreground transition-colors duration-200 hover:text-primary"
+          >
+            info@veridex.mk →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</Layout>

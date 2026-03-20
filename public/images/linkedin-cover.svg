@@ -1,0 +1,84 @@
+<svg viewBox="0 0 1128 191" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1128" y2="191" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a1025"/>
+      <stop offset="50%" stop-color="#1e1233"/>
+      <stop offset="100%" stop-color="#0f0a1a"/>
+    </linearGradient>
+    <!-- Accent glow -->
+    <radialGradient id="glow1" cx="300" cy="95" r="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="850" cy="60" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6d28d9" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#6d28d9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow3" cx="600" cy="180" r="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="1128" height="191" fill="url(#bg)"/>
+
+  <!-- Glows -->
+  <rect width="1128" height="191" fill="url(#glow1)"/>
+  <rect width="1128" height="191" fill="url(#glow2)"/>
+  <rect width="1128" height="191" fill="url(#glow3)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.04" stroke="#8b5cf6" stroke-width="0.5">
+    <line x1="0" y1="0" x2="0" y2="191"/>
+    <line x1="60" y1="0" x2="60" y2="191"/>
+    <line x1="120" y1="0" x2="120" y2="191"/>
+    <line x1="180" y1="0" x2="180" y2="191"/>
+    <line x1="240" y1="0" x2="240" y2="191"/>
+    <line x1="300" y1="0" x2="300" y2="191"/>
+    <line x1="360" y1="0" x2="360" y2="191"/>
+    <line x1="420" y1="0" x2="420" y2="191"/>
+    <line x1="480" y1="0" x2="480" y2="191"/>
+    <line x1="540" y1="0" x2="540" y2="191"/>
+    <line x1="600" y1="0" x2="600" y2="191"/>
+    <line x1="660" y1="0" x2="660" y2="191"/>
+    <line x1="720" y1="0" x2="720" y2="191"/>
+    <line x1="780" y1="0" x2="780" y2="191"/>
+    <line x1="840" y1="0" x2="840" y2="191"/>
+    <line x1="900" y1="0" x2="900" y2="191"/>
+    <line x1="960" y1="0" x2="960" y2="191"/>
+    <line x1="1020" y1="0" x2="1020" y2="191"/>
+    <line x1="1080" y1="0" x2="1080" y2="191"/>
+    <line x1="0" y1="60" x2="1128" y2="60"/>
+    <line x1="0" y1="120" x2="1128" y2="120"/>
+  </g>
+
+  <!-- Floating abstract shapes -->
+  <circle cx="180" cy="40" r="45" fill="#7c3aed" opacity="0.06"/>
+  <circle cx="950" cy="150" r="55" fill="#8b5cf6" opacity="0.05"/>
+  <circle cx="500" cy="170" r="30" fill="#6d28d9" opacity="0.06"/>
+
+  <!-- Decorative dashed ring -->
+  <circle cx="1020" cy="30" r="70" stroke="#7c3aed" stroke-width="0.5" stroke-dasharray="3 5" fill="none" opacity="0.08"/>
+
+  <!-- Small accent dots -->
+  <circle cx="140" cy="95" r="2" fill="#8b5cf6" opacity="0.3"/>
+  <circle cx="340" cy="35" r="1.5" fill="#a78bfa" opacity="0.25"/>
+  <circle cx="700" cy="155" r="2" fill="#7c3aed" opacity="0.2"/>
+  <circle cx="880" cy="45" r="1.5" fill="#a78bfa" opacity="0.3"/>
+  <circle cx="460" cy="30" r="1" fill="#c4b5fd" opacity="0.2"/>
+
+  <!-- Tagline — right-aligned to avoid logo area (logo sits bottom-left) -->
+  <text x="740" y="88" font-family="'Inter', 'Helvetica Neue', sans-serif" font-size="22" font-weight="700" fill="white" letter-spacing="-0.02em">
+    Организација, транспорт и финансии
+  </text>
+  <text x="740" y="118" font-family="'Inter', 'Helvetica Neue', sans-serif" font-size="22" font-weight="700" letter-spacing="-0.02em">
+    <tspan fill="white">— </tspan><tspan fill="#a78bfa">без хаос</tspan>
+  </text>
+
+  <!-- URL -->
+  <text x="740" y="148" font-family="'Inter', 'Helvetica Neue', sans-serif" font-size="12" fill="#9ca3af" letter-spacing="0.05em">
+    veridex.mk
+  </text>
+</svg>

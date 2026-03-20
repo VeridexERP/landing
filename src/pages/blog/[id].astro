@@ -1,0 +1,140 @@
+---
+import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header"
+import SiteFooter from "@/components/site-footer.astro"
+import { getCollection, render } from "astro:content"
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime()
+  )
+  return posts.map((post, i) => ({
+    params: { id: post.id },
+    props: {
+      post,
+      prevPost: posts[i + 1] ?? null,
+      nextPost: posts[i - 1] ?? null,
+    },
+  }))
+}
+
+const { post, prevPost, nextPost } = Astro.props
+const { Content } = await render(post)
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString("mk-MK", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })
+}
+
+// Reading time estimate (~200 words/min for Macedonian)
+const body = post.body ?? ""
+const wordCount = body.trim().split(/\s+/).length
+const readingTime = Math.max(1, Math.ceil(wordCount / 200))
+---
+
+<Layout
+  title={`${post.data.title} — Veridex блог`}
+  description={post.data.description}
+>
+  <SiteHeader client:load currentPath="/blog" />
+
+  <main class="pt-24">
+    <article class="py-16 md:py-24">
+      <div class="mx-auto max-w-3xl px-6">
+        <a
+          href="/blog"
+          class="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+          Сите објави
+        </a>
+
+        <header class="mb-12">
+          <div class="mb-4 flex items-center gap-3 text-sm text-muted-foreground">
+            <time datetime={post.data.date.toISOString()}>
+              {formatDate(post.data.date)}
+            </time>
+            <span class="h-1 w-1 rounded-full bg-muted-foreground/40"></span>
+            <span>{readingTime} мин читање</span>
+          </div>
+          <h1 class="text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
+            {post.data.title}
+          </h1>
+          <p class="mt-6 text-lg leading-relaxed text-muted-foreground">
+            {post.data.description}
+          </p>
+        </header>
+
+        <div class="prose prose-lg max-w-none">
+          <Content />
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-16 border-t border-border pt-10">
+          <div class="rounded-2xl bg-muted/50 p-8 text-center">
+            <h3 class="text-xl font-bold">Сакате да видите како изгледа во пракса?</h3>
+            <p class="mt-2 text-muted-foreground">
+              Закажете бесплатно демо и видете го Veridex во акција.
+            </p>
+            <a href="/#contact" class="mt-6 inline-block">
+              <button
+                class="rounded-2xl bg-gradient-to-r from-primary to-[oklch(0.48_0.22_275)] px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/30"
+              >
+                Закажи демо
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <!-- Prev / Next -->
+        {(prevPost || nextPost) && (
+          <nav class="mt-10 grid gap-4 sm:grid-cols-2">
+            {prevPost ? (
+              <a
+                href={`/blog/${prevPost.id}`}
+                class="group flex flex-col gap-2 rounded-2xl border border-border/50 bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/5"
+              >
+                <span class="flex items-center gap-1 text-xs font-medium text-muted-foreground">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                  </svg>
+                  Претходна
+                </span>
+                <span class="text-sm font-semibold transition-colors duration-200 group-hover:text-primary">
+                  {prevPost.data.title}
+                </span>
+              </a>
+            ) : (
+              <div />
+            )}
+            {nextPost ? (
+              <a
+                href={`/blog/${nextPost.id}`}
+                class="group flex flex-col items-end gap-2 rounded-2xl border border-border/50 bg-white p-6 text-right transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/5"
+              >
+                <span class="flex items-center gap-1 text-xs font-medium text-muted-foreground">
+                  Следна
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
+                <span class="text-sm font-semibold transition-colors duration-200 group-hover:text-primary">
+                  {nextPost.data.title}
+                </span>
+              </a>
+            ) : (
+              <div />
+            )}
+          </nav>
+        )}
+      </div>
+    </article>
+  </main>
+
+  <SiteFooter />
+</Layout>
