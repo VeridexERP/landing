@@ -1,0 +1,78 @@
+<svg viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a1025"/>
+      <stop offset="50%" stop-color="#1e1233"/>
+      <stop offset="100%" stop-color="#0f0a1a"/>
+    </linearGradient>
+    <radialGradient id="g1" cx="200" cy="300" r="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="900" cy="200" r="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6d28d9" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#6d28d9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g3" cx="600" cy="500" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="textGrad" x1="0" y1="0" x2="400" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#g1)"/>
+  <rect width="1200" height="630" fill="url(#g2)"/>
+  <rect width="1200" height="630" fill="url(#g3)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.03" stroke="#8b5cf6" stroke-width="0.5">
+    <line x1="0" y1="0" x2="0" y2="630"/><line x1="60" y1="0" x2="60" y2="630"/>
+    <line x1="120" y1="0" x2="120" y2="630"/><line x1="180" y1="0" x2="180" y2="630"/>
+    <line x1="240" y1="0" x2="240" y2="630"/><line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="360" y1="0" x2="360" y2="630"/><line x1="420" y1="0" x2="420" y2="630"/>
+    <line x1="480" y1="0" x2="480" y2="630"/><line x1="540" y1="0" x2="540" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/><line x1="660" y1="0" x2="660" y2="630"/>
+    <line x1="720" y1="0" x2="720" y2="630"/><line x1="780" y1="0" x2="780" y2="630"/>
+    <line x1="840" y1="0" x2="840" y2="630"/><line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="960" y1="0" x2="960" y2="630"/><line x1="1020" y1="0" x2="1020" y2="630"/>
+    <line x1="1080" y1="0" x2="1080" y2="630"/><line x1="1140" y1="0" x2="1140" y2="630"/>
+    <line x1="0" y1="60" x2="1200" y2="60"/><line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/><line x1="0" y1="480" x2="1200" y2="480"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+  </g>
+
+  <!-- Decorative elements -->
+  <circle cx="150" cy="150" r="80" fill="#7c3aed" opacity="0.05"/>
+  <circle cx="1050" cy="500" r="100" fill="#8b5cf6" opacity="0.04"/>
+  <circle cx="1100" cy="100" r="120" stroke="#7c3aed" stroke-width="0.5" stroke-dasharray="4 6" fill="none" opacity="0.06"/>
+
+  <!-- Accent dots -->
+  <circle cx="200" cy="400" r="3" fill="#8b5cf6" opacity="0.25"/>
+  <circle cx="950" cy="180" r="2.5" fill="#a78bfa" opacity="0.2"/>
+  <circle cx="400" cy="120" r="2" fill="#c4b5fd" opacity="0.15"/>
+  <circle cx="800" cy="480" r="3" fill="#7c3aed" opacity="0.2"/>
+
+  <!-- Logo text -->
+  <text x="100" y="240" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="32" font-weight="800" fill="white" letter-spacing="0.05em" opacity="0.9">VERIDEX</text>
+  <text x="100" y="272" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="16" fill="#9ca3af" letter-spacing="0.1em">ERP</text>
+
+  <!-- Main headline -->
+  <text x="100" y="360" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="800" fill="white" letter-spacing="-0.02em">Организација, транспорт</text>
+  <text x="100" y="425" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="800" letter-spacing="-0.02em">
+    <tspan fill="white">и финансии — </tspan>
+    <tspan fill="url(#textGrad)">без хаос</tspan>
+  </text>
+
+  <!-- Subtitle -->
+  <text x="100" y="490" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="20" fill="#9ca3af">Направено во Македонија, за Македонија</text>
+
+  <!-- URL -->
+  <text x="100" y="560" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="16" fill="#6d28d9" letter-spacing="0.05em">veridexerp.com</text>
+</svg>
