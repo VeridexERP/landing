@@ -1,0 +1,188 @@
+---
+import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header"
+import SiteFooter from "@/components/site-footer.astro"
+
+const comparisons = [
+  {
+    area: "Фактури",
+    excel: "Рачно внесување ставка по ставка. 15-30 мин по фактура.",
+    veridex: "AI чита PDF и пополнува автоматски. Вие само одобрувате.",
+  },
+  {
+    area: "Сервиси",
+    excel: "Запишано на листче или во глава. Се сетите кога е доцна.",
+    veridex: "Автоматски потсетник по КМ и време. Пред да стане дефект.",
+  },
+  {
+    area: "Трошоци",
+    excel: "Расфрлани низ табели. Не знаете кое возило колку чини.",
+    veridex: "Трошок врзан за возило, тура, возач. Трошок по КМ \u2014 на клик.",
+  },
+  {
+    area: "Документи",
+    excel: "По фиоки, мејлови, Viber групи. \u201EКој го има тој договор?\u201C",
+    veridex: "Скенирани, прикачени на вработен/возило. Пребарливи.",
+  },
+  {
+    area: "Тури",
+    excel: "Ко вози, каде, кога? Некој знае, ама не е тука.",
+    veridex: "Статус во реално време. Рута, возач, товар \u2014 на едно место.",
+  },
+  {
+    area: "Плати",
+    excel: "Рачна пресметка во табела. Грешки се нормални.",
+    veridex: "Систематска евиденција. Историја, договори, без грешки.",
+  },
+  {
+    area: "Пристап",
+    excel: "Само од компјутерот каде е фајлот. Или на USB.",
+    veridex: "Од било каде \u2014 компјутер, телефон, камион. 100% облак.",
+  },
+  {
+    area: "Историја",
+    excel: "Некој избришал ред во табелата. Никој не знае кој.",
+    veridex: "Секоја измена запишана \u2014 кој, кога, што. Целосна трага.",
+  },
+]
+---
+
+<Layout
+  title="Veridex vs Excel \u2014 Veridex ERP"
+  description="Детална споредба: зошто Excel табели не се замена за ERP систем и што се менува кога преминете на Veridex."
+>
+  <SiteHeader client:load currentPath="/veridex-vs-excel" />
+
+  <main class="pt-24">
+    <!-- Hero -->
+    <section class="relative overflow-hidden py-16 md:py-24">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[oklch(0.48_0.22_275_/_0.05)]"></div>
+      <div class="grid-pattern pointer-events-none absolute inset-0 opacity-30"></div>
+      <div class="relative mx-auto max-w-7xl px-6">
+        <div class="max-w-3xl">
+          <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+            Споредба
+          </div>
+          <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
+            Veridex vs Excel,
+            <span class="text-gradient"> Viber и листчиња</span>
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            Што се менува кога преминете од рачна работа на систем направен
+            за транспорт? Споредба точка по точка.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison table -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto max-w-5xl px-6">
+        <!-- Table header -->
+        <div class="mb-2 grid grid-cols-[140px_1fr_1fr] gap-4 md:grid-cols-[180px_1fr_1fr]">
+          <div></div>
+          <div class="rounded-xl bg-red-50 px-4 py-3 text-center text-sm font-semibold text-red-600 md:px-6">
+            Excel / рачно
+          </div>
+          <div class="rounded-xl bg-primary/10 px-4 py-3 text-center text-sm font-semibold text-primary md:px-6">
+            Veridex
+          </div>
+        </div>
+
+        <!-- Rows -->
+        <div class="space-y-2">
+          {comparisons.map((row) => (
+            <div class="grid grid-cols-[140px_1fr_1fr] gap-4 rounded-2xl border border-border/50 bg-white p-5 md:grid-cols-[180px_1fr_1fr] md:p-6">
+              <div class="flex items-start">
+                <span class="text-sm font-bold md:text-base">{row.area}</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <span class="text-sm text-muted-foreground">{row.excel}</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                  </svg>
+                </div>
+                <span class="text-sm">{row.veridex}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- The real cost -->
+    <section class="bg-muted/30 py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-6">
+        <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">
+          Вистинската цена на Excel
+        </h2>
+        <div class="mt-8 space-y-6 text-lg leading-relaxed text-muted-foreground">
+          <p>
+            Excel е &bdquo;бесплатен&ldquo; &mdash; но колку ве чини времето
+            што го трошите на внесување, барање и проверување на податоци?
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 sm:grid-cols-3">
+          <div class="rounded-2xl border border-border/50 bg-white p-6 text-center">
+            <div class="text-3xl font-extrabold text-red-500">15-30 мин</div>
+            <p class="mt-2 text-sm text-muted-foreground">рачно внесување по фактура</p>
+          </div>
+          <div class="rounded-2xl border border-border/50 bg-white p-6 text-center">
+            <div class="text-3xl font-extrabold text-red-500">0</div>
+            <p class="mt-2 text-sm text-muted-foreground">историја кога некој избрише ред</p>
+          </div>
+          <div class="rounded-2xl border border-border/50 bg-white p-6 text-center">
+            <div class="text-3xl font-extrabold text-red-500">1 човек</div>
+            <p class="mt-2 text-sm text-muted-foreground">го знае &bdquo;системот&ldquo; &mdash; кога ќе заминe?</p>
+          </div>
+        </div>
+
+        <div class="mt-10 space-y-6 text-lg leading-relaxed text-muted-foreground">
+          <p>
+            Со Veridex, фактурите се внесуваат за секунди (AI ги чита),
+            секоја промена е запишана, и системот не зависи од меморијата
+            на еден човек.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download PDF -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-6 text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">
+          Преземете ја споредбата
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
+          Споделете ја со тимот или менаџментот.
+        </p>
+        <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
+          <a
+            href="/documents/veridex-vs-excel.pdf"
+            download
+            class="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-primary to-[oklch(0.48_0.22_275)] px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-primary/25 transition-all duration-300 hover:scale-105"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+            </svg>
+            Преземи PDF
+          </a>
+          <a href="/kontakt" class="text-base font-medium text-muted-foreground transition-colors duration-200 hover:text-primary">
+            Или закажете демо &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</Layout>
