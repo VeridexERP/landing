@@ -1,4 +1,16 @@
-import { Building2, ChevronDown, Menu, Truck, Wallet, X } from "lucide-react"
+import {
+  BookOpen,
+  Bot,
+  Building2,
+  ChevronDown,
+  FileText,
+  HelpCircle,
+  Menu,
+  RefreshCw,
+  Truck,
+  Wallet,
+  X,
+} from "lucide-react"
 import { useState } from "react"
 import {
   NavigationMenu,
@@ -8,6 +20,39 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
+
+const resources = [
+  {
+    icon: BookOpen,
+    label: "Ресурси",
+    description: "Водичи, документи и материјали",
+    href: "/resursi",
+  },
+  {
+    icon: HelpCircle,
+    label: "FAQ",
+    description: "Најчесто поставувани прашања",
+    href: "/faq",
+  },
+  {
+    icon: Bot,
+    label: "AI во Veridex",
+    description: "Вештачка интелигенција во ERP",
+    href: "/ai",
+  },
+  {
+    icon: FileText,
+    label: "Veridex vs Excel",
+    description: "Споредба на ERP наспроти Excel",
+    href: "/veridex-vs-excel",
+  },
+  {
+    icon: RefreshCw,
+    label: "Changelog",
+    description: "Историја на промени и надградби",
+    href: "/changelog",
+  },
+]
 
 const modules = [
   {
@@ -41,6 +86,7 @@ export default function SiteHeader({
 }: SiteHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileModulesOpen, setMobileModulesOpen] = useState(false)
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
 
   const prefix = isLanding ? "" : "/"
   const pricingHref = `${prefix}#pricing`
@@ -103,9 +149,46 @@ export default function SiteHeader({
           <a href={pricingHref} className={linkClass("")}>
             Цени
           </a>
-          <a href="/resursi" className={linkClass("/resursi")}>
-            Ресурси
-          </a>
+
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  className={
+                    ["/resursi", "/faq", "/ai", "/veridex-vs-excel", "/changelog"].some((p) => currentPath.startsWith(p))
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-primary"
+                  }
+                >
+                  Ресурси
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-[340px] space-y-1 p-3">
+                    {resources.map((res) => (
+                      <NavigationMenuLink
+                        className="flex flex-row items-start gap-3 rounded-xl p-3 transition-colors hover:bg-muted"
+                        href={res.href}
+                        key={res.label}
+                      >
+                        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                          <res.icon className="h-4.5 w-4.5 text-primary" />
+                        </div>
+                        <div>
+                          <span className="block text-sm font-semibold">
+                            {res.label}
+                          </span>
+                          <span className="block text-xs text-muted-foreground">
+                            {res.description}
+                          </span>
+                        </div>
+                      </NavigationMenuLink>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+
           <a href="/blog" className={linkClass("/blog")}>
             Блог
           </a>
@@ -127,7 +210,10 @@ export default function SiteHeader({
           aria-expanded={mobileOpen}
           onClick={() => {
             setMobileOpen(!mobileOpen)
-            if (mobileOpen) setMobileModulesOpen(false)
+            if (mobileOpen) {
+              setMobileModulesOpen(false)
+              setMobileResourcesOpen(false)
+            }
           }}
         >
           {mobileOpen ? (
@@ -175,13 +261,31 @@ export default function SiteHeader({
             >
               Цени
             </a>
-            <a
-              href="/resursi"
-              className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:bg-muted hover:text-primary"
-              onClick={() => setMobileOpen(false)}
+            {/* Resources accordion */}
+            <button
+              className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-medium text-muted-foreground transition-colors duration-200 hover:bg-muted hover:text-primary"
+              onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
             >
               Ресурси
-            </a>
+              <ChevronDown
+                className={`h-4 w-4 transition-transform duration-200 ${mobileResourcesOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+            {mobileResourcesOpen && (
+              <div className="ml-4 space-y-1 border-l-2 border-primary/10 pl-4">
+                {resources.map((res) => (
+                  <a
+                    key={res.label}
+                    href={res.href}
+                    className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors duration-200 hover:bg-muted hover:text-primary"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <res.icon className="h-4 w-4 text-primary" />
+                    {res.label}
+                  </a>
+                ))}
+              </div>
+            )}
             <a
               href="/blog"
               className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:bg-muted hover:text-primary"

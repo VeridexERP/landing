@@ -1,28 +1,133 @@
-<footer class="border-t bg-muted/30 py-12">
-  <div
-    class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 md:flex-row"
-  >
-    <div class="flex items-center gap-3">
-      <img src="/images/logo.png" alt="Veridex" class="h-7 w-auto" />
+<footer class="border-t bg-muted/30 py-16">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+      <!-- Модули -->
+      <div>
+        <h4 class="mb-4 text-sm font-semibold">Модули</h4>
+        <ul class="space-y-2.5 text-sm text-muted-foreground">
+          <li>
+            <a
+              href="/moduli/organizacija"
+              class="transition-colors duration-200 hover:text-primary"
+              >Организација</a
+            >
+          </li>
+          <li>
+            <a
+              href="/moduli/transport"
+              class="transition-colors duration-200 hover:text-primary"
+              >Транспорт</a
+            >
+          </li>
+          <li>
+            <a
+              href="/moduli/finansii"
+              class="transition-colors duration-200 hover:text-primary"
+              >Финансии</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Ресурси -->
+      <div>
+        <h4 class="mb-4 text-sm font-semibold">Ресурси</h4>
+        <ul class="space-y-2.5 text-sm text-muted-foreground">
+          <li>
+            <a
+              href="/resursi"
+              class="transition-colors duration-200 hover:text-primary"
+              >Ресурси</a
+            >
+          </li>
+          <li>
+            <a
+              href="/faq"
+              class="transition-colors duration-200 hover:text-primary">FAQ</a
+            >
+          </li>
+          <li>
+            <a
+              href="/ai"
+              class="transition-colors duration-200 hover:text-primary"
+              >AI во Veridex</a
+            >
+          </li>
+          <li>
+            <a
+              href="/veridex-vs-excel"
+              class="transition-colors duration-200 hover:text-primary"
+              >Veridex vs Excel</a
+            >
+          </li>
+          <li>
+            <a
+              href="/changelog"
+              class="transition-colors duration-200 hover:text-primary"
+              >Changelog</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Компанија -->
+      <div>
+        <h4 class="mb-4 text-sm font-semibold">Компанија</h4>
+        <ul class="space-y-2.5 text-sm text-muted-foreground">
+          <li>
+            <a
+              href="/za-nas"
+              class="transition-colors duration-200 hover:text-primary"
+              >За нас</a
+            >
+          </li>
+          <li>
+            <a
+              href="/blog"
+              class="transition-colors duration-200 hover:text-primary">Блог</a
+            >
+          </li>
+          <li>
+            <a
+              href="/kontakt"
+              class="transition-colors duration-200 hover:text-primary"
+              >Контакт</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Правни -->
+      <div>
+        <h4 class="mb-4 text-sm font-semibold">Правни</h4>
+        <ul class="space-y-2.5 text-sm text-muted-foreground">
+          <li>
+            <a
+              href="/privatnost"
+              class="transition-colors duration-200 hover:text-primary"
+              >Приватност</a
+            >
+          </li>
+          <li>
+            <a
+              href="/uslovi"
+              class="transition-colors duration-200 hover:text-primary"
+              >Услови</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
-    <p class="text-sm text-muted-foreground">
-      &copy; {new Date().getFullYear()} Veridex. Сите права задржани.
-    </p>
-    <nav
-      class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium text-muted-foreground"
+
+    <div
+      class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/50 pt-8 md:flex-row"
     >
-      <a
-        href="/kontakt"
-        class="transition-colors duration-200 hover:text-primary">Контакт</a
-      >
-      <a
-        href="/privatnost"
-        class="transition-colors duration-200 hover:text-primary">Приватност</a
-      >
-      <a
-        href="/uslovi"
-        class="transition-colors duration-200 hover:text-primary">Услови</a
-      >
-    </nav>
+      <div class="flex items-center gap-3">
+        <img src="/images/logo.png" alt="Veridex" class="h-7 w-auto" />
+      </div>
+      <p class="text-sm text-muted-foreground">
+        &copy; {new Date().getFullYear()} Veridex. Сите права задржани.
+      </p>
+    </div>
   </div>
 </footer>
