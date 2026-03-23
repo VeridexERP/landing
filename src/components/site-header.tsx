@@ -76,20 +76,15 @@ const modules = [
 ]
 
 interface SiteHeaderProps {
-  isLanding?: boolean
   currentPath?: string
 }
 
 export default function SiteHeader({
-  isLanding = false,
   currentPath = "",
 }: SiteHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileModulesOpen, setMobileModulesOpen] = useState(false)
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
-
-  const prefix = isLanding ? "" : "/"
-  const pricingHref = `${prefix}#pricing`
 
   const isActive = (path: string) => currentPath === path
 
@@ -145,10 +140,6 @@ export default function SiteHeader({
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-
-          <a href={pricingHref} className={linkClass("")}>
-            Цени
-          </a>
 
           <NavigationMenu>
             <NavigationMenuList>
@@ -254,13 +245,6 @@ export default function SiteHeader({
               </div>
             )}
 
-            <a
-              href={pricingHref}
-              className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:bg-muted hover:text-primary"
-              onClick={() => setMobileOpen(false)}
-            >
-              Цени
-            </a>
             {/* Resources accordion */}
             <button
               className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-medium text-muted-foreground transition-colors duration-200 hover:bg-muted hover:text-primary"
