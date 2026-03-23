@@ -1,0 +1,107 @@
+---
+import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header"
+import SiteFooter from "@/components/site-footer.astro"
+import { getCollection, render } from "astro:content"
+
+const releases = (await getCollection("changelog")).sort((a, b) => {
+  const partsA = a.data.version.split(".").map(Number)
+  const partsB = b.data.version.split(".").map(Number)
+  for (let i = 0; i < 3; i++) {
+    if (partsB[i] !== partsA[i]) return partsB[i] - partsA[i]
+  }
+  return 0
+})
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString("mk-MK", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })
+}
+
+const tagStyles: Record<string, { bg: string; text: string; label: string }> = {
+  major: { bg: "bg-primary/10", text: "text-primary", label: "Major" },
+  minor: { bg: "bg-green-100", text: "text-green-700", label: "Minor" },
+  patch: { bg: "bg-muted", text: "text-muted-foreground", label: "Patch" },
+}
+
+const rendered = await Promise.all(
+  releases.map(async (release) => {
+    const { Content } = await render(release)
+    return { release, Content }
+  })
+)
+---
+
+<Layout
+  title="Changelog — Veridex ERP"
+  description="Што е ново во Veridex ERP. Следете ги сите верзии, нови функции и подобрувања."
+>
+  <SiteHeader client:load currentPath="/changelog" />
+
+  <main class="pt-24">
+    <section class="py-16 md:py-24">
+      <div class="mx-auto max-w-3xl px-6">
+        <div class="mb-16">
+          <a
+            href="/"
+            class="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+            Назад кон почетна
+          </a>
+          <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">Changelog</h1>
+          <p class="mt-4 max-w-2xl text-lg text-muted-foreground">
+            Сите верзии, нови функции и подобрувања на Veridex ERP.
+          </p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="relative space-y-12">
+          <!-- Vertical line -->
+          <div class="absolute top-0 left-[19px] h-full w-px bg-border"></div>
+
+          {rendered.map(({ release, Content }, i) => {
+            const tag = tagStyles[release.data.tag]
+            return (
+              <div class="relative pl-14">
+                {/* Timeline dot */}
+                <div class={`absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-full border-4 border-background ${i === 0 ? "bg-primary" : "bg-muted"}`}>
+                  {i === 0 ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+                    </svg>
+                  ) : (
+                    <div class="h-2 w-2 rounded-full bg-muted-foreground/40" />
+                  )}
+                </div>
+
+                {/* Content */}
+                <div class="rounded-2xl border border-border/50 bg-white p-8">
+                  <div class="mb-4 flex flex-wrap items-center gap-3">
+                    <span class="text-2xl font-extrabold">v{release.data.version}</span>
+                    <span class={`rounded-full px-2.5 py-0.5 text-xs font-bold ${tag.bg} ${tag.text}`}>
+                      {tag.label}
+                    </span>
+                  </div>
+                  <time class="text-sm text-muted-foreground" datetime={release.data.date.toISOString()}>
+                    {formatDate(release.data.date)}
+                  </time>
+                  <div class="prose mt-6 max-w-none">
+                    <Content />
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</Layout>
