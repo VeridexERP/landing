@@ -5,8 +5,8 @@ import SiteFooter from "@/components/site-footer.astro"
 ---
 
 <Layout
-  title="Модул: Организација — Veridex ERP"
-  description="Компании, вработени, возила, приколки и одржување. Сè што вашиот бизнис поседува и управува — на едно место."
+  title="Модул: Организација | Veridex ERP"
+  description="Компании, вработени и документи на едно место. Наместо да барате по фиоки и папки."
 >
   <SiteHeader client:load currentPath="/moduli/organizacija" />
 
@@ -21,12 +21,11 @@ import SiteFooter from "@/components/site-footer.astro"
             Модул
           </div>
           <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
-            Целата организација
-            <span class="text-gradient"> на дланка</span>
+            Компании, вработени и документи
+            <span class="text-gradient"> на едно место</span>
           </h1>
           <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Компании, вработени, возила, приколки и нивното одржување &mdash;
-            сè што вашиот бизнис поседува и управува, на едно место.
+            Сите ваши фирми, вработени, договори и документација. Наместо да барате по фиоки и папки.
           </p>
           <a href="/kontakt" class="mt-8 inline-block">
             <button class="rounded-2xl bg-gradient-to-r from-primary to-[oklch(0.48_0.22_275)] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105">
@@ -37,17 +36,38 @@ import SiteFooter from "@/components/site-footer.astro"
       </div>
     </section>
 
+    <!-- Како изгледа тоа во пракса? -->
+    <section class="py-16 md:py-20">
+      <div class="mx-auto max-w-7xl px-6">
+        <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">Како изгледа тоа во пракса?</h2>
+        <div class="mt-10 grid gap-8 md:grid-cols-2">
+          <div class="rounded-2xl border border-red-200 bg-red-50/50 p-8">
+            <h3 class="mb-4 text-lg font-bold text-red-700">Без Veridex</h3>
+            <p class="leading-relaxed text-muted-foreground">
+              Вработувате нов возач. Копија од возачката дозвола ви е во една папка на компјутерот. Договорот за вработување е во фиока во канцеларија. Лекарското уверение го имате некаде на Viber, ви го пратил колегата. Кога ви треба нешто од тие документи, барате по три различни места. Понекогаш не наоѓате воопшто.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-green-200 bg-green-50/50 p-8">
+            <h3 class="mb-4 text-lg font-bold text-green-700">Со Veridex</h3>
+            <p class="leading-relaxed text-muted-foreground">
+              Го отворате профилот на возачот во Veridex. Таму ги гледате сите негови документи: возачка дозвола, договор, лекарско уверение, лични документи. Сè е на едно место, под неговото име. Кога ви треба нешто, знаете точно каде да барате.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Features -->
     <section class="py-20 md:py-28">
       <div class="mx-auto max-w-7xl px-6">
         <div class="mb-16">
           <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">Што вклучува</h2>
           <p class="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Пет области за целосна контрола над сè што вашиот бизнис поседува.
+            Две области за управување со основата на вашиот бизнис: компаниите и луѓето кои работат во нив.
           </p>
         </div>
 
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-8 md:grid-cols-2">
           <!-- Компании -->
           <div class="rounded-2xl border border-border/50 bg-white p-8">
             <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
@@ -57,13 +77,14 @@ import SiteFooter from "@/components/site-footer.astro"
             </div>
             <h3 class="mb-3 text-xl font-bold">Компании</h3>
             <p class="mb-4 leading-relaxed text-muted-foreground">
-              Повеќе правни субјекти, еден преглед. Секоја компанија со
-              свои банкарски сметки и документи.
+              Многу транспортни фирми имаат повеќе правни субјекти. Една фирма за домашен транспорт, друга за меѓународен. Во Veridex ги имате сите на едно место, секоја со своите податоци.
             </p>
             <ul class="space-y-2 text-sm text-muted-foreground">
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Основни податоци и регистрација</li>
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Банкарски сметки по компанија</li>
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Поврзани документи</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Основни податоци: назив, даночен број, матичен број, адреса</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Банкарски сметки за секоја компанија посебно</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Регистрациони документи и тековни состојби</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Контакт лица по компанија</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Преглед на сите документи поврзани со компанијата</li>
             </ul>
           </div>
 
@@ -76,73 +97,57 @@ import SiteFooter from "@/components/site-footer.astro"
             </div>
             <h3 class="mb-3 text-xl font-bold">Вработени</h3>
             <p class="mb-4 leading-relaxed text-muted-foreground">
-              Договори, позиции, плати и возачки казни &mdash;
-              целосна евиденција за секој член на тимот.
+              Секој вработен со свој профил. Лични податоци, документи, договори, плати. За возачите дополнително: возачка дозвола, лекарски прегледи и казни. Наместо да чувате работи во тетратка и Excel.
             </p>
             <ul class="space-y-2 text-sm text-muted-foreground">
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Лични податоци и договори</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Лични податоци и документи за идентификација</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Договори за вработување, со датуми и историја</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Возачка дозвола (CDL) со рок на важност и потсетник</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Лекарски прегледи со датуми за следниот преглед</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Евиденција на возачки казни</li>
               <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Плати и историја на примања</li>
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Возачки казни и документи</li>
-            </ul>
-          </div>
-
-          <!-- Возила -->
-          <div class="rounded-2xl border border-border/50 bg-white p-8">
-            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
-              </svg>
-            </div>
-            <h3 class="mb-3 text-xl font-bold">Возила</h3>
-            <p class="mb-4 leading-relaxed text-muted-foreground">
-              Целосна историја за секое возило &mdash; од регистрација до
-              последен технички преглед. Правила за одржување вклучени.
-            </p>
-            <ul class="space-y-2 text-sm text-muted-foreground">
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Регистарски податоци и документи</li>
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Рокови за регистрација и осигурување</li>
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Правила за одржување</li>
-            </ul>
-          </div>
-
-          <!-- Приколки -->
-          <div class="rounded-2xl border border-border/50 bg-white p-8">
-            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z" />
-              </svg>
-            </div>
-            <h3 class="mb-3 text-xl font-bold">Приколки</h3>
-            <p class="mb-4 leading-relaxed text-muted-foreground">
-              Приклучна опрема евидентирана и следена со своја
-              документација и рокови.
-            </p>
-            <ul class="space-y-2 text-sm text-muted-foreground">
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Евиденција и регистрација</li>
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Документи и рокови</li>
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Поврзаност со тури</li>
-            </ul>
-          </div>
-
-          <!-- Одржување -->
-          <div class="rounded-2xl border border-border/50 bg-white p-8 md:col-span-2 lg:col-span-1">
-            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.049.58.025 1.193-.14 1.743" />
-              </svg>
-            </div>
-            <h3 class="mb-3 text-xl font-bold">Одржување на возила</h3>
-            <p class="mb-4 leading-relaxed text-muted-foreground">
-              Сервисна историја, ставки, поврзани фактури. Никогаш повеќе
-              пропуштен сервис или заборавен технички преглед.
-            </p>
-            <ul class="space-y-2 text-sm text-muted-foreground">
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Записи за сервис со детални ставки</li>
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Поврзаност со влезни фактури</li>
-              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Автоматски потсетници</li>
             </ul>
           </div>
         </div>
+
+        <!-- Connections -->
+        <div class="mt-16 rounded-2xl border border-border/50 bg-muted/30 p-8 md:p-10">
+          <h3 class="mb-4 text-xl font-bold">Како се поврзува со другите модули</h3>
+          <p class="mb-6 text-muted-foreground">
+            Податоците за вработените и компаниите не стојат сами. Тие се користат низ целиот систем.
+          </p>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="flex items-start gap-3">
+              <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold">Кон Транспорт</p>
+                <p class="text-sm text-muted-foreground">Вработените се поврзани со тури во транспортниот модул. Кога правите тура, возачот го избирате од листата на вработени.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold">Кон Финансии</p>
+                <p class="text-sm text-muted-foreground">Трошоците по вработен се видливи во финансискиот модул. Плати, казни, дневници. Сè е поврзано со конкретен вработен.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Illustration -->
+    <section class="py-8">
+      <div class="mx-auto max-w-7xl px-6">
+        <img src="/images/module-organizacija.svg" alt="Организација модул" class="mx-auto mt-12 w-full max-w-2xl" />
       </div>
     </section>
 
@@ -150,15 +155,15 @@ import SiteFooter from "@/components/site-footer.astro"
     <section class="bg-muted/30 py-20 md:py-28">
       <div class="mx-auto max-w-3xl px-6 text-center">
         <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">
-          Подготвени да ја средите
-          <span class="text-gradient"> организацијата?</span>
+          Сакате да ги видите вашите компании и вработени
+          <span class="text-gradient"> на едно место?</span>
         </h2>
         <p class="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
-          Видете го модулот во акција со бесплатна демонстрација.
+          Закажете бесплатна демонстрација и ќе ви покажеме како изгледа кога сè е средено.
         </p>
         <a href="/kontakt" class="mt-8 inline-block">
           <button class="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-[oklch(0.48_0.22_275)] px-10 py-4 text-lg font-semibold text-white shadow-2xl shadow-primary/30 transition-all duration-300 hover:scale-105">
-            <span class="relative z-10">Закажи бесплатно демо</span>
+            <span class="relative z-10">Закажи демо</span>
             <div class="animate-shimmer absolute inset-0 -z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
           </button>
         </a>

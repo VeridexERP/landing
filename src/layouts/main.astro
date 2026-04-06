@@ -8,13 +8,43 @@ interface Props {
 }
 
 const {
-  title = "Veridex ERP — Организација, транспорт и финансии без хаос",
-  description = "Veridex ERP — Организација, транспорт и финансии без хаос. Направено во Македонија, за македонски бизниси.",
+  title = "Veridex ERP | Возила, возачи, тури и фактури на едно место",
+  description = "Veridex ERP за транспортни компании. Возила, возачи, тури и фактури на едно место. Направено во Македонија, на македонски.",
   ogImage = "/images/og.png",
 } = Astro.props
 
 const siteUrl = "https://veridexerp.com"
+const canonicalUrl = `${siteUrl}${Astro.url.pathname}`
 const ogImageUrl = `${siteUrl}${ogImage}`
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      name: "Veridex ERP",
+      description: "ERP систем за транспортни компании. Возила, возачи, тури и фактури на едно место.",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: siteUrl,
+      inLanguage: "mk",
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "EUR",
+        lowPrice: "12",
+        highPrice: "22",
+        offerCount: "4",
+      },
+    },
+    {
+      "@type": "Organization",
+      name: "Veridex",
+      url: siteUrl,
+      email: "info@veridex.mk",
+      logo: `${siteUrl}/images/logo.png`,
+    },
+  ],
+}
 ---
 
 <html lang="mk">
@@ -22,8 +52,21 @@ const ogImageUrl = `${siteUrl}${ogImage}`
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalUrl} />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Google Analytics (GA4) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -32,7 +75,7 @@ const ogImageUrl = `${siteUrl}${ogImage}`
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="Veridex ERP" />
     <meta property="og:locale" content="mk_MK" />
 

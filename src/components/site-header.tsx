@@ -2,6 +2,7 @@ import {
   BookOpen,
   Bot,
   Building2,
+  CarFront,
   ChevronDown,
   FileText,
   HelpCircle,
@@ -36,7 +37,7 @@ const resources = [
   },
   {
     icon: Bot,
-    label: "AI во Veridex",
+    label: "ВИ во Veridex",
     description: "Вештачка интелигенција во ERP",
     href: "/ai",
   },
@@ -58,19 +59,25 @@ const modules = [
   {
     icon: Building2,
     label: "Организација",
-    description: "Компании, вработени, возила, приколки и одржување",
+    description: "Компании, вработени, договори и документи",
     href: "/moduli/organizacija",
+  },
+  {
+    icon: CarFront,
+    label: "Флота",
+    description: "Возила, приколки, сервиси и рокови",
+    href: "/moduli/flota",
   },
   {
     icon: Truck,
     label: "Транспорт",
-    description: "Тури, налози и оперативно планирање",
+    description: "Тури, возачи, нарачки и трошоци",
     href: "/moduli/transport",
   },
   {
     icon: Wallet,
     label: "Финансии",
-    description: "Фактури, трошоци и финансиски извештаи",
+    description: "Влезни и излезни фактури, трошоци и наплата",
     href: "/moduli/finansii",
   },
 ]

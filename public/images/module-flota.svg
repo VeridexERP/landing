@@ -1,0 +1,141 @@
+<svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" rx="16" fill="#f8f9fa"/>
+
+  <!-- Background garage silhouette -->
+  <g opacity="0.04">
+    <rect x="100" y="280" width="600" height="100" rx="0" fill="#9ca3af"/>
+    <rect x="100" y="240" width="600" height="40" rx="0" fill="#9ca3af"/>
+    <!-- Roof -->
+    <polygon points="100,240 400,180 700,240" fill="#9ca3af"/>
+    <!-- Garage door -->
+    <rect x="300" y="280" width="200" height="100" rx="4" fill="#6b7280"/>
+    <line x1="300" y1="300" x2="500" y2="300" stroke="#9ca3af" stroke-width="2"/>
+    <line x1="300" y1="320" x2="500" y2="320" stroke="#9ca3af" stroke-width="2"/>
+    <line x1="300" y1="340" x2="500" y2="340" stroke="#9ca3af" stroke-width="2"/>
+    <line x1="300" y1="360" x2="500" y2="360" stroke="#9ca3af" stroke-width="2"/>
+  </g>
+
+  <!-- Center: Truck (side view) -->
+  <g transform="translate(240, 170)">
+    <!-- Trailer body -->
+    <rect x="0" y="10" width="200" height="80" rx="4" fill="#e5e7eb" stroke="#d1d5db" stroke-width="1.5"/>
+    <!-- Trailer side detail lines -->
+    <line x1="10" y1="30" x2="190" y2="30" stroke="#d1d5db" stroke-width="0.75"/>
+    <rect x="8" y="15" width="184" height="10" rx="2" fill="#7c3aed" opacity="0.08"/>
+    <!-- Trailer ribs -->
+    <line x1="40" y1="30" x2="40" y2="85" stroke="#d1d5db" stroke-width="0.5"/>
+    <line x1="80" y1="30" x2="80" y2="85" stroke="#d1d5db" stroke-width="0.5"/>
+    <line x1="120" y1="30" x2="120" y2="85" stroke="#d1d5db" stroke-width="0.5"/>
+    <line x1="160" y1="30" x2="160" y2="85" stroke="#d1d5db" stroke-width="0.5"/>
+
+    <!-- Cab -->
+    <rect x="200" y="30" width="80" height="60" rx="6" fill="#d1d5db" stroke="#9ca3af" stroke-width="1.5"/>
+    <!-- Cab window -->
+    <rect x="220" y="36" width="50" height="28" rx="4" fill="#7c3aed" opacity="0.12"/>
+    <!-- Cab front -->
+    <rect x="270" y="50" width="14" height="40" rx="3" fill="#9ca3af"/>
+    <!-- Headlight -->
+    <rect x="274" y="56" width="6" height="8" rx="2" fill="#f59e0b" opacity="0.5"/>
+    <!-- Bumper -->
+    <rect x="270" y="82" width="16" height="8" rx="2" fill="#9ca3af"/>
+
+    <!-- Purple accent stripe -->
+    <rect x="0" y="12" width="280" height="4" rx="2" fill="#7c3aed" opacity="0.3"/>
+
+    <!-- Wheels -->
+    <!-- Trailer rear wheels (dual) -->
+    <circle cx="30" cy="95" r="14" fill="#6b7280"/>
+    <circle cx="30" cy="95" r="8" fill="#9ca3af"/>
+    <circle cx="30" cy="95" r="3" fill="#6b7280"/>
+    <circle cx="60" cy="95" r="14" fill="#6b7280"/>
+    <circle cx="60" cy="95" r="8" fill="#9ca3af"/>
+    <circle cx="60" cy="95" r="3" fill="#6b7280"/>
+
+    <!-- Cab rear wheel -->
+    <circle cx="210" cy="95" r="14" fill="#6b7280"/>
+    <circle cx="210" cy="95" r="8" fill="#9ca3af"/>
+    <circle cx="210" cy="95" r="3" fill="#6b7280"/>
+
+    <!-- Cab front wheel -->
+    <circle cx="260" cy="95" r="14" fill="#6b7280"/>
+    <circle cx="260" cy="95" r="8" fill="#9ca3af"/>
+    <circle cx="260" cy="95" r="3" fill="#6b7280"/>
+
+    <!-- License plate -->
+    <rect x="232" y="72" width="34" height="12" rx="2" fill="#fff" stroke="#9ca3af" stroke-width="0.75"/>
+    <text x="249" y="81" font-family="sans-serif" font-size="6" font-weight="600" fill="#1f2937" text-anchor="middle">SK-1234</text>
+
+    <!-- Ground line -->
+    <line x1="-20" y1="109" x2="300" y2="109" stroke="#e5e7eb" stroke-width="1"/>
+  </g>
+
+  <!-- Status cards/bubbles around truck -->
+
+  <!-- Top-left: Регистрација -->
+  <g transform="translate(50, 30)">
+    <rect width="180" height="80" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <!-- Icon -->
+    <rect x="14" y="14" width="28" height="20" rx="3" fill="#7c3aed" opacity="0.1"/>
+    <text x="28" y="28" font-family="sans-serif" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="700">ID</text>
+    <text x="52" y="26" font-family="sans-serif" font-size="9" font-weight="600" fill="#1f2937">Регистрација</text>
+    <text x="52" y="40" font-family="sans-serif" font-size="10" fill="#6b7280">15.08.2026</text>
+    <rect x="14" y="52" width="60" height="18" rx="9" fill="#22c55e" opacity="0.1"/>
+    <text x="44" y="65" font-family="sans-serif" font-size="8" font-weight="600" fill="#22c55e" text-anchor="middle">Валидна</text>
+    <!-- Connecting line to truck -->
+    <line x1="180" y1="70" x2="260" y2="170" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4 3"/>
+    <circle cx="180" cy="70" r="3" fill="#e5e7eb"/>
+  </g>
+
+  <!-- Top-right: Тех. преглед -->
+  <g transform="translate(570, 30)">
+    <rect width="180" height="80" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <!-- Clipboard icon -->
+    <rect x="14" y="12" width="22" height="26" rx="3" fill="#f59e0b" opacity="0.15"/>
+    <rect x="18" y="10" width="14" height="6" rx="2" fill="#f59e0b" opacity="0.3"/>
+    <line x1="18" y1="22" x2="32" y2="22" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+    <line x1="18" y1="27" x2="28" y2="27" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+    <line x1="18" y1="32" x2="32" y2="32" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+    <text x="48" y="26" font-family="sans-serif" font-size="9" font-weight="600" fill="#1f2937">Тех. преглед</text>
+    <text x="48" y="40" font-family="sans-serif" font-size="10" fill="#6b7280">22.04.2026</text>
+    <rect x="14" y="52" width="80" height="18" rx="9" fill="#f59e0b" opacity="0.1"/>
+    <text x="54" y="65" font-family="sans-serif" font-size="8" font-weight="600" fill="#f59e0b" text-anchor="middle">за 16 дена</text>
+    <!-- Connecting line to truck -->
+    <line x1="0" y1="70" x2="-30" y2="170" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4 3"/>
+    <circle cx="0" cy="70" r="3" fill="#e5e7eb"/>
+  </g>
+
+  <!-- Bottom-left: Осигурување -->
+  <g transform="translate(50, 300)">
+    <rect width="180" height="80" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <!-- Shield icon -->
+    <path d="M24 14 L34 10 L34 24 C34 30 29 34 24 36 C19 34 14 30 14 24 L14 10 Z" fill="#22c55e" opacity="0.15" stroke="#22c55e" stroke-width="1" stroke-opacity="0.3"/>
+    <path d="M20 22 L23 25 L29 19" stroke="#22c55e" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <text x="48" y="26" font-family="sans-serif" font-size="9" font-weight="600" fill="#1f2937">Осигурување</text>
+    <text x="48" y="40" font-family="sans-serif" font-size="10" fill="#6b7280">01.12.2026</text>
+    <rect x="14" y="52" width="60" height="18" rx="9" fill="#22c55e" opacity="0.1"/>
+    <text x="44" y="65" font-family="sans-serif" font-size="8" font-weight="600" fill="#22c55e" text-anchor="middle">Валидно</text>
+    <!-- Connecting line to truck -->
+    <line x1="180" y1="10" x2="260" y2="-20" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4 3"/>
+    <circle cx="180" cy="10" r="3" fill="#e5e7eb"/>
+  </g>
+
+  <!-- Bottom-right: Следен сервис -->
+  <g transform="translate(570, 300)">
+    <rect width="180" height="80" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1.5"/>
+    <!-- Wrench icon -->
+    <g transform="translate(14, 12)">
+      <path d="M6 10 L16 20 L20 16 L10 6 C12 2 18 2 20 6 L22 4 L18 0 C12 -2 6 2 6 10Z" fill="#7c3aed" opacity="0.2" transform="scale(1.2)"/>
+      <rect x="4" y="14" width="16" height="4" rx="2" fill="#7c3aed" opacity="0.3" transform="rotate(-45 12 16)"/>
+    </g>
+    <text x="48" y="26" font-family="sans-serif" font-size="9" font-weight="600" fill="#1f2937">Следен сервис</text>
+    <text x="48" y="40" font-family="sans-serif" font-size="10" fill="#6b7280">Редовен сервис</text>
+    <rect x="14" y="52" width="86" height="18" rx="9" fill="#7c3aed" opacity="0.1"/>
+    <text x="57" y="65" font-family="sans-serif" font-size="8" font-weight="600" fill="#7c3aed" text-anchor="middle">за 3,200 км</text>
+    <!-- Connecting line to truck -->
+    <line x1="0" y1="10" x2="-30" y2="-20" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4 3"/>
+    <circle cx="0" cy="10" r="3" fill="#e5e7eb"/>
+  </g>
+
+  <!-- Center truck label -->
+  <text x="400" y="168" font-family="sans-serif" font-size="10" font-weight="600" fill="#7c3aed" text-anchor="middle">SK-1234-AB  ·  MAN TGX 18.500</text>
+</svg>

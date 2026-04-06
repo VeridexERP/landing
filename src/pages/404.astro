@@ -1,0 +1,33 @@
+---
+import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header"
+import SiteFooter from "@/components/site-footer.astro"
+---
+
+<Layout
+  title="Страницата не е пронајдена | Veridex ERP"
+  description="Страницата што ја барате не постои или е преместена."
+>
+  <SiteHeader client:load />
+
+  <main class="pt-24">
+    <section class="flex min-h-[60vh] items-center justify-center py-20">
+      <div class="mx-auto max-w-lg px-6 text-center">
+        <p class="text-8xl font-extrabold text-primary/20">404</p>
+        <h1 class="mt-6 text-3xl font-extrabold tracking-tight md:text-4xl">
+          Страницата не е пронајдена
+        </h1>
+        <p class="mt-4 text-lg text-muted-foreground">
+          Страницата што ја барате не постои или е преместена.
+        </p>
+        <a href="/" class="mt-8 inline-block">
+          <button class="rounded-2xl bg-gradient-to-r from-primary to-[oklch(0.48_0.22_275)] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105">
+            Назад кон почетна
+          </button>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</Layout>

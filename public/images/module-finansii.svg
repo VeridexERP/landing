@@ -1,0 +1,182 @@
+<svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" rx="16" fill="#f8f9fa"/>
+
+  <!-- LEFT: Vehicle connection -->
+  <g transform="translate(40, 120)">
+    <rect width="150" height="160" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1.5"/>
+
+    <!-- Header -->
+    <rect width="150" height="36" rx="12" fill="#7c3aed" opacity="0.05"/>
+    <rect y="24" width="150" height="12" fill="#7c3aed" opacity="0.05"/>
+    <text x="75" y="24" font-family="sans-serif" font-size="9" font-weight="600" fill="#7c3aed" text-anchor="middle">Возило</text>
+
+    <!-- Truck illustration -->
+    <g transform="translate(30, 48)">
+      <rect x="0" y="4" width="50" height="24" rx="3" fill="#e5e7eb" stroke="#d1d5db" stroke-width="1"/>
+      <rect x="50" y="10" width="24" height="18" rx="3" fill="#d1d5db" stroke="#9ca3af" stroke-width="1"/>
+      <rect x="54" y="12" width="14" height="8" rx="2" fill="#7c3aed" opacity="0.12"/>
+      <circle cx="14" cy="32" r="5" fill="#6b7280"/>
+      <circle cx="14" cy="32" r="2.5" fill="#9ca3af"/>
+      <circle cx="36" cy="32" r="5" fill="#6b7280"/>
+      <circle cx="36" cy="32" r="2.5" fill="#9ca3af"/>
+      <circle cx="60" cy="32" r="5" fill="#6b7280"/>
+      <circle cx="60" cy="32" r="2.5" fill="#9ca3af"/>
+    </g>
+
+    <!-- Vehicle ID -->
+    <rect x="20" y="96" width="110" height="22" rx="6" fill="#7c3aed" opacity="0.06"/>
+    <text x="75" y="111" font-family="sans-serif" font-size="10" font-weight="700" fill="#7c3aed" text-anchor="middle">SK-1234-AB</text>
+
+    <!-- Stats -->
+    <text x="20" y="136" font-family="sans-serif" font-size="8" fill="#9ca3af">Фактури за ова возило</text>
+    <text x="20" y="150" font-family="sans-serif" font-size="13" font-weight="700" fill="#1f2937">23</text>
+    <text x="50" y="150" font-family="sans-serif" font-size="9" fill="#9ca3af">· €18,400</text>
+  </g>
+
+  <!-- Arrow from vehicle to invoice -->
+  <g transform="translate(192, 195)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.3"/>
+    <polygon points="56,-4 64,0 56,4" fill="#7c3aed" opacity="0.3"/>
+    <text x="30" y="14" font-family="sans-serif" font-size="7" fill="#7c3aed" text-anchor="middle" opacity="0.5">поврзано</text>
+  </g>
+
+  <!-- CENTER: Invoice mockup -->
+  <g transform="translate(258, 28)">
+    <rect width="284" height="344" rx="14" fill="#fff" stroke="#e5e7eb" stroke-width="1.5"/>
+
+    <!-- Invoice header -->
+    <rect width="284" height="60" rx="14" fill="#7c3aed" opacity="0.06"/>
+    <rect y="48" width="284" height="12" fill="#7c3aed" opacity="0.06"/>
+
+    <!-- Invoice title and number -->
+    <g transform="translate(16, 14)">
+      <!-- Invoice icon -->
+      <rect x="0" y="0" width="28" height="34" rx="4" fill="#7c3aed" opacity="0.12"/>
+      <line x1="6" y1="8" x2="22" y2="8" stroke="#7c3aed" stroke-width="1.5" opacity="0.3"/>
+      <line x1="6" y1="14" x2="18" y2="14" stroke="#7c3aed" stroke-width="1" opacity="0.2"/>
+      <line x1="6" y1="19" x2="22" y2="19" stroke="#7c3aed" stroke-width="1" opacity="0.2"/>
+      <line x1="6" y1="24" x2="16" y2="24" stroke="#7c3aed" stroke-width="1" opacity="0.2"/>
+    </g>
+    <text x="56" y="30" font-family="sans-serif" font-size="14" font-weight="700" fill="#1f2937">Фактура #F-0234</text>
+    <text x="56" y="46" font-family="sans-serif" font-size="9" fill="#9ca3af">06.04.2026 · Скопје</text>
+
+    <!-- Status badge -->
+    <rect x="198" y="16" width="68" height="24" rx="12" fill="#22c55e" opacity="0.1" stroke="#22c55e" stroke-width="0.75" stroke-opacity="0.3"/>
+    <circle cx="214" cy="28" r="4" fill="#22c55e" opacity="0.4"/>
+    <text x="244" y="33" font-family="sans-serif" font-size="9" font-weight="600" fill="#22c55e" text-anchor="middle">Платена</text>
+
+    <!-- Client info -->
+    <g transform="translate(16, 72)">
+      <text x="0" y="0" font-family="sans-serif" font-size="8" fill="#9ca3af">КЛИЕНТ</text>
+      <text x="0" y="16" font-family="sans-serif" font-size="12" font-weight="600" fill="#1f2937">ABC Логистика ДООЕЛ</text>
+      <text x="0" y="30" font-family="sans-serif" font-size="9" fill="#9ca3af">ЕДБ: MK4080056789012 · Скопје</text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="16" y1="114" x2="268" y2="114" stroke="#e5e7eb" stroke-width="1"/>
+
+    <!-- Line items header -->
+    <g transform="translate(16, 124)">
+      <rect x="-4" y="0" width="260" height="20" rx="4" fill="#f8f9fa"/>
+      <text x="4" y="14" font-family="sans-serif" font-size="7" font-weight="600" fill="#9ca3af">ОПИС</text>
+      <text x="150" y="14" font-family="sans-serif" font-size="7" font-weight="600" fill="#9ca3af">КОЛ.</text>
+      <text x="186" y="14" font-family="sans-serif" font-size="7" font-weight="600" fill="#9ca3af">ЦЕНА</text>
+      <text x="228" y="14" font-family="sans-serif" font-size="7" font-weight="600" fill="#9ca3af">ИЗНОС</text>
+    </g>
+
+    <!-- Line item 1 -->
+    <g transform="translate(16, 150)">
+      <text x="4" y="14" font-family="sans-serif" font-size="9" fill="#1f2937">Транспорт СК→БГ</text>
+      <text x="4" y="26" font-family="sans-serif" font-size="7" fill="#9ca3af">TU-0045 · 14.2т</text>
+      <text x="154" y="14" font-family="sans-serif" font-size="9" fill="#6b7280">1</text>
+      <text x="186" y="14" font-family="sans-serif" font-size="9" fill="#6b7280">€1,800</text>
+      <text x="228" y="14" font-family="sans-serif" font-size="9" font-weight="600" fill="#1f2937">€1,800</text>
+      <line x1="0" y1="32" x2="252" y2="32" stroke="#f8f9fa" stroke-width="1"/>
+    </g>
+
+    <!-- Line item 2 -->
+    <g transform="translate(16, 186)">
+      <text x="4" y="14" font-family="sans-serif" font-size="9" fill="#1f2937">Транспорт БГ→СК</text>
+      <text x="4" y="26" font-family="sans-serif" font-size="7" fill="#9ca3af">TU-0046 · 8.5т</text>
+      <text x="154" y="14" font-family="sans-serif" font-size="9" fill="#6b7280">1</text>
+      <text x="186" y="14" font-family="sans-serif" font-size="9" fill="#6b7280">€1,200</text>
+      <text x="228" y="14" font-family="sans-serif" font-size="9" font-weight="600" fill="#1f2937">€1,200</text>
+      <line x1="0" y1="32" x2="252" y2="32" stroke="#f8f9fa" stroke-width="1"/>
+    </g>
+
+    <!-- Line item 3 -->
+    <g transform="translate(16, 222)">
+      <text x="4" y="14" font-family="sans-serif" font-size="9" fill="#1f2937">Чекање / демураж</text>
+      <text x="4" y="26" font-family="sans-serif" font-size="7" fill="#9ca3af">4 часа</text>
+      <text x="154" y="14" font-family="sans-serif" font-size="9" fill="#6b7280">4</text>
+      <text x="186" y="14" font-family="sans-serif" font-size="9" fill="#6b7280">€50</text>
+      <text x="228" y="14" font-family="sans-serif" font-size="9" font-weight="600" fill="#1f2937">€200</text>
+      <line x1="0" y1="32" x2="252" y2="32" stroke="#e5e7eb" stroke-width="1"/>
+    </g>
+
+    <!-- Subtotal / Tax / Total -->
+    <g transform="translate(16, 262)">
+      <text x="152" y="14" font-family="sans-serif" font-size="9" fill="#9ca3af">Основица:</text>
+      <text x="228" y="14" font-family="sans-serif" font-size="9" fill="#6b7280">€3,200</text>
+
+      <text x="152" y="30" font-family="sans-serif" font-size="9" fill="#9ca3af">ДДВ (18%):</text>
+      <text x="228" y="30" font-family="sans-serif" font-size="9" fill="#6b7280">€576</text>
+
+      <line x1="148" y1="38" x2="256" y2="38" stroke="#e5e7eb" stroke-width="1"/>
+
+      <!-- Total -->
+      <rect x="144" y="44" width="112" height="28" rx="8" fill="#7c3aed" opacity="0.06" stroke="#7c3aed" stroke-width="0.75" stroke-opacity="0.2"/>
+      <text x="152" y="63" font-family="sans-serif" font-size="9" font-weight="600" fill="#9ca3af">Вкупно:</text>
+      <text x="228" y="63" font-family="sans-serif" font-size="12" font-weight="700" fill="#7c3aed">€3,776</text>
+    </g>
+
+    <!-- Payment info -->
+    <g transform="translate(16, 318)">
+      <circle cx="6" cy="6" r="6" fill="#22c55e" opacity="0.15"/>
+      <path d="M3 6 L5 8 L9 4" stroke="#22c55e" stroke-width="1.5" fill="none"/>
+      <text x="18" y="10" font-family="sans-serif" font-size="8" fill="#22c55e">Платена на 08.04.2026 · банков трансфер</text>
+    </g>
+  </g>
+
+  <!-- Arrow from invoice to tour -->
+  <g transform="translate(544, 195)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.3"/>
+    <polygon points="56,-4 64,0 56,4" fill="#7c3aed" opacity="0.3"/>
+    <text x="30" y="14" font-family="sans-serif" font-size="7" fill="#7c3aed" text-anchor="middle" opacity="0.5">поврзано</text>
+  </g>
+
+  <!-- RIGHT: Tour connection -->
+  <g transform="translate(610, 120)">
+    <rect width="150" height="160" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1.5"/>
+
+    <!-- Header -->
+    <rect width="150" height="36" rx="12" fill="#7c3aed" opacity="0.05"/>
+    <rect y="24" width="150" height="12" fill="#7c3aed" opacity="0.05"/>
+    <text x="75" y="24" font-family="sans-serif" font-size="9" font-weight="600" fill="#7c3aed" text-anchor="middle">Тура</text>
+
+    <!-- Route icon -->
+    <g transform="translate(30, 48)">
+      <!-- Route visualization -->
+      <circle cx="10" cy="8" r="6" fill="#7c3aed" opacity="0.15"/>
+      <circle cx="10" cy="8" r="3" fill="#7c3aed" opacity="0.3"/>
+      <line x1="10" y1="14" x2="10" y2="28" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.2"/>
+      <circle cx="10" cy="34" r="6" fill="#9ca3af" opacity="0.15"/>
+      <circle cx="10" cy="34" r="3" fill="#9ca3af" opacity="0.3"/>
+      <!-- Labels -->
+      <text x="22" y="12" font-family="sans-serif" font-size="8" fill="#1f2937">Скопје</text>
+      <text x="22" y="38" font-family="sans-serif" font-size="8" fill="#1f2937">Белград</text>
+    </g>
+
+    <!-- Tour ID -->
+    <rect x="20" y="96" width="110" height="22" rx="6" fill="#7c3aed" opacity="0.06"/>
+    <text x="75" y="111" font-family="sans-serif" font-size="10" font-weight="700" fill="#7c3aed" text-anchor="middle">TU-0045</text>
+
+    <!-- Stats -->
+    <text x="20" y="136" font-family="sans-serif" font-size="8" fill="#9ca3af">Фактури за оваа тура</text>
+    <text x="20" y="150" font-family="sans-serif" font-size="13" font-weight="700" fill="#1f2937">2</text>
+    <text x="40" y="150" font-family="sans-serif" font-size="9" fill="#9ca3af">· €3,776</text>
+  </g>
+
+  <!-- Top label -->
+  <text x="400" y="384" font-family="sans-serif" font-size="10" fill="#d1d5db" text-anchor="middle">Финансии — фактури поврзани со возила и тури</text>
+</svg>

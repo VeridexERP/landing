@@ -5,9 +5,9 @@ import SiteFooter from "@/components/site-footer.astro"
 
 const resources = [
   {
-    title: "Veridex ERP \u2014 Брошура",
+    title: "Veridex ERP | Брошура",
     description:
-      "Целосен преглед на сите модули, функционалности и предности на Veridex ERP. Идеално за споделување со тимот или менаџментот.",
+      "Преглед на сите четири модули и функционалности на Veridex ERP. Споделете со тимот или менаџментот за полесна одлука.",
     file: "/documents/veridex-brochure.pdf",
     category: "Преглед",
     icon: "book",
@@ -15,7 +15,7 @@ const resources = [
   {
     title: "Veridex на една страница",
     description:
-      "Сè што треба да знаете за Veridex на една страница. Брз преглед на модулите, цената и клучните предности.",
+      "Сè за Veridex на една страница: модули, цена и предности. За брз преглед пред демото.",
     file: "/documents/veridex-onepager.pdf",
     category: "Преглед",
     icon: "doc",
@@ -23,7 +23,7 @@ const resources = [
   {
     title: "Veridex vs. Excel",
     description:
-      "Детална споредба меѓу управување со бизнис процеси во Excel табели и во Veridex ERP. Кога е време за промена?",
+      "Детална споредба меѓу Excel табели и Veridex ERP. Што конкретно се менува кога преминете на систем?",
     file: "/documents/veridex-vs-excel.pdf",
     category: "Споредба",
     icon: "compare",
@@ -31,7 +31,7 @@ const resources = [
   {
     title: "План за имплементација",
     description:
-      "Чекор по чекор \u2014 како изгледа процесот од првиот контакт до целосно оперативен систем. Временска рамка и фази.",
+      "Чекор по чекор, од првиот контакт до оперативен систем. Временска рамка, фази и што се очекува од вас.",
     file: "/documents/veridex-timeline.pdf",
     category: "Водич",
     icon: "timeline",
@@ -47,7 +47,7 @@ const icons: Record<string, string> = {
 ---
 
 <Layout
-  title="Ресурси — Veridex ERP"
+  title="Ресурси | Veridex ERP"
   description="Преземете брошури, водичи и споредби за Veridex ERP. Бесплатни материјали за вашиот тим."
 >
   <SiteHeader client:load currentPath="/resursi" />
@@ -67,8 +67,8 @@ const icons: Record<string, string> = {
           </a>
           <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">Ресурси</h1>
           <p class="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Бесплатни материјали за преземање. Споделете ги со тимот или
-            искористете ги за да ја донесете одлуката полесно.
+            Бесплатни материјали за преземање. Споделете ги со тимот,
+            менаџментот или партнерите за полесна одлука.
           </p>
         </div>
 
@@ -130,8 +130,7 @@ const icons: Record<string, string> = {
             Сакате да видите сè во живо?
           </h3>
           <p class="mx-auto mt-4 max-w-lg text-muted-foreground">
-            Документите се добар почеток, но ништо не го заменува вистинското
-            демо. Закажете бесплатна демонстрација.
+            Документите се добар почеток, но ништо не го заменува демо во живо.
           </p>
           <a href="/kontakt" class="mt-8 inline-block">
             <button

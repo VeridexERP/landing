@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://veridexerp.com/sitemap-index.xml

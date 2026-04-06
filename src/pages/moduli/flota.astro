@@ -1,0 +1,209 @@
+---
+import Layout from "@/layouts/main.astro"
+import SiteHeader from "@/components/site-header"
+import SiteFooter from "@/components/site-footer.astro"
+---
+
+<Layout
+  title="Модул: Флота | Veridex ERP"
+  description="Возила, приколки и одржување. Со потсетници за регистрација, технички преглед и сервис."
+>
+  <SiteHeader client:load currentPath="/moduli/flota" />
+
+  <main class="pt-24">
+    <!-- Hero -->
+    <section class="relative overflow-hidden py-16 md:py-24">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-[oklch(0.48_0.22_275_/_0.05)]"></div>
+      <div class="relative mx-auto max-w-7xl px-6">
+        <div class="max-w-3xl">
+          <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">2</span>
+            Модул
+          </div>
+          <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
+            Знаете каде е секое возило, кога му треба сервис
+            <span class="text-gradient"> и колку ве чини</span>
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            Возила, приколки и одржување. Со потсетници за регистрација, технички преглед и сервис.
+          </p>
+          <a href="/kontakt" class="mt-8 inline-block">
+            <button class="rounded-2xl bg-gradient-to-r from-primary to-[oklch(0.48_0.22_275)] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105">
+              Закажи демо
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Како изгледа тоа во пракса? -->
+    <section class="py-16 md:py-20">
+      <div class="mx-auto max-w-7xl px-6">
+        <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">Како изгледа тоа во пракса?</h2>
+        <div class="mt-10 grid gap-8 md:grid-cols-2">
+          <div class="rounded-2xl border border-red-200 bg-red-50/50 p-8">
+            <h3 class="mb-4 text-lg font-bold text-red-700">Без Veridex</h3>
+            <p class="leading-relaxed text-muted-foreground">
+              Регистрацијата на камионот истекува. Дознавате 3 дена доцна, кога веќе добивте казна. Датумот го имавте запишано во тетратка, ама некој ја преместил. Или сте заборавиле да проверите. Се случува секоја година, и секоја година платите казна.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-green-200 bg-green-50/50 p-8">
+            <h3 class="mb-4 text-lg font-bold text-green-700">Со Veridex</h3>
+            <p class="leading-relaxed text-muted-foreground">
+              Veridex ви праќа потсетник 30 дена пред да истече регистрацијата. Истото важи за осигурувањето и техничкиот преглед. Не треба да запомните ништо. Системот запомнува наместо вас.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="mb-16">
+          <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">Што вклучува</h2>
+          <p class="mt-4 max-w-2xl text-lg text-muted-foreground">
+            Три области за управување со возниот парк: возила, приколки и одржување.
+          </p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-3">
+          <!-- Возила -->
+          <div class="rounded-2xl border border-border/50 bg-white p-8">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-xl font-bold">Возила</h3>
+            <p class="mb-4 leading-relaxed text-muted-foreground">
+              Секое возило со свој профил. Регистарски податоци, документи, рокови. Кога нешто истекува, добивате потсетник. Не треба да проверувате рачно.
+            </p>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Регистарски податоци: број, марка, модел, година</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Рок на регистрација со автоматски потсетник</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Рок на осигурување со автоматски потсетник</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Технички преглед со датум и потсетник</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Документи прикачени по возило (сообраќајна, полиса, итн.)</li>
+            </ul>
+          </div>
+
+          <!-- Приколки -->
+          <div class="rounded-2xl border border-border/50 bg-white p-8">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z" />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-xl font-bold">Приколки</h3>
+            <p class="mb-4 leading-relaxed text-muted-foreground">
+              Приколките имаат свои рокови и документи, исто како возилата. Може да ги поврзете со возила за да знаете кое возило ја влече која приколка.
+            </p>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Регистарски податоци и документација</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Рокови за регистрација, осигурување, технички преглед</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Автоматски потсетници за сите рокови</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Поврзување со возила и тури</li>
+            </ul>
+          </div>
+
+          <!-- Одржување -->
+          <div class="rounded-2xl border border-border/50 bg-white p-8">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.049.58.025 1.193-.14 1.743" />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-xl font-bold">Одржување на возила</h3>
+            <p class="mb-4 leading-relaxed text-muted-foreground">
+              Секој сервис е запишан: што е направено, колку чинело, кога. Може да поставите правила за одржување, на пример „сервис на секои 30.000 км" или „замена на масло на секои 6 месеци". Системот ве потсетува кога дојде време.
+            </p>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Сервисна историја со детални ставки и цени</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Правила за одржување: по километри или по месеци</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Автоматски потсетници кога треба следниот сервис</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Поврзување со влезни фактури од финансискиот модул</li>
+              <li class="flex items-center gap-2"><div class="h-1.5 w-1.5 rounded-full bg-primary"></div>Фактурата од сервисерот се поврзува со записот за одржување</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Колку ве чини секое возило? -->
+        <div class="mt-16 rounded-2xl border border-border/50 bg-white p-8 md:p-10">
+          <h3 class="mb-4 text-xl font-bold">Колку ве чини секое возило?</h3>
+          <p class="mb-6 leading-relaxed text-muted-foreground">
+            Сите трошоци се поврзани со конкретно возило. Гориво, патарини, сервиси, казни, осигурување. Кога отворате возило во Veridex, ги гледате сите трошоци на едно место. Знаете точно колку ве чини секој камион на месечно и годишно ниво. Не треба да собирате бројки од три различни Excel табели.
+          </p>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {["Гориво", "Патарини", "Сервиси", "Казни", "Осигурување"].map((item) => (
+              <div class="flex items-center gap-2 rounded-xl bg-muted/50 px-4 py-3">
+                <div class="h-2 w-2 shrink-0 rounded-full bg-primary"></div>
+                <span class="text-sm font-medium">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Connections -->
+        <div class="mt-16 rounded-2xl border border-border/50 bg-muted/30 p-8 md:p-10">
+          <h3 class="mb-4 text-xl font-bold">Како се поврзува со другите модули</h3>
+          <p class="mb-6 text-muted-foreground">
+            Возилата и приколките не се само евиденција. Тие се користат во тури и имаат свои трошоци.
+          </p>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="flex items-start gap-3">
+              <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold">Кон Транспорт</p>
+                <p class="text-sm text-muted-foreground">Возилата и приколките се поврзуваат со тури во транспортниот модул. Кога правите тура, возилото го избирате од листата.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold">Кон Финансии</p>
+                <p class="text-sm text-muted-foreground">Трошоците за одржување се поврзани со фактури во финансискиот модул. Фактурата од сервисерот е директно поврзана со записот за сервис.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Illustration -->
+    <section class="py-8">
+      <div class="mx-auto max-w-7xl px-6">
+        <img src="/images/module-flota.svg" alt="Флота модул" class="mx-auto mt-12 w-full max-w-2xl" />
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-muted/30 py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-6 text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">
+          Сакате да знаете точно колку
+          <span class="text-gradient"> ве чини секое возило?</span>
+        </h2>
+        <p class="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
+          Закажете бесплатна демонстрација и ќе ви покажеме како изгледа кога секое возило има свој профил со сите трошоци.
+        </p>
+        <a href="/kontakt" class="mt-8 inline-block">
+          <button class="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-[oklch(0.48_0.22_275)] px-10 py-4 text-lg font-semibold text-white shadow-2xl shadow-primary/30 transition-all duration-300 hover:scale-105">
+            <span class="relative z-10">Закажи демо</span>
+            <div class="animate-shimmer absolute inset-0 -z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+          </button>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</Layout>
